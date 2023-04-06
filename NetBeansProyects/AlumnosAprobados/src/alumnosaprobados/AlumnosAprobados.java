@@ -14,8 +14,8 @@ public class AlumnosAprobados {
         int NotaAlumno;
         
         //asignamos valor a variables
-        NombreAlumno = ("Maximo Franzoni");
-        NotaAlumno = 6;
+        NombreAlumno = ("Rodrigo");
+        NotaAlumno = 10;
         
         //arranca el programa
         System.out.println("Hola " +NombreAlumno);
