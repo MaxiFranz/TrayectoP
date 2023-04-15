@@ -12,9 +12,9 @@ public class Franzoni144ej2 {
     
     //creamos variables
     int oPeracion;
-    int Num1;
-    int Num2;
-    int Resultado;
+    double Num1;
+    double Num2;
+    double Resultado;
     
      //mensaje de bienvenida y menu de operaciones
     System.out.println("-----------------------------------------------");
@@ -29,10 +29,10 @@ public class Franzoni144ej2 {
     //Guardamos la operacion que elegida
     oPeracion = entrada.nextInt();
     System.out.print("Ingrese el numero 1 : ");
-    Num1 = entrada.nextInt();
+    Num1 = entrada.nextDouble();
     
     System.out.print("Ingrese el numero 2 : ");
-    Num2 = entrada.nextInt();
+    Num2 = entrada.nextDouble();
     
     System.out.println("-----------------------------------------------");
     System.out.println("-----------------------------------------------");
