@@ -23,13 +23,18 @@ public class FranzoniEjercicioVocales1904 {
             switch(letra){
                 //vocales abiertas
                 case "a":
-                case "e":    
+                case "A":
+                case "e":
+                case "E":
                 case "o":
+                case "O":
                     System.out.println("La letra elegida " +letra+  " es una vocal y es abierta");
                     break;
                 //vocales cerradas
                 case "i":
+                case "I":
                 case "u":
+                case "U":
                     System.out.println("La letra elegida " +letra+ " es una vocal y es cerrada");
                     break;
                 //no es una vocal  
