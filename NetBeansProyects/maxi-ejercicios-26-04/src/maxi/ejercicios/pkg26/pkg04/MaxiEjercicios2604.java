@@ -30,7 +30,7 @@ public class MaxiEjercicios2604 {
     lNombre = nOmbre.length();
     
     //mostramos la cantidad de caracteres
-    System.out.println("Su la palabra " +lNombre+ " tiene caracteres");
+    System.out.println("Su la palabra " +nOmbre+ " tiene " +lNombre+ " caracteres" );
     
     //consultamos que parte del nombre quiere seleccionar
     
