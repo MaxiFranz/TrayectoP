@@ -23,7 +23,7 @@ public class MaxiAgenda {
         // 2 - definimos la cantidad de posiciones de los vectores en un solo lugar
         //se podria definir por teclado la cantidad antes de comenzar...
         //lo hago asi porque para probar todo el codigo es mas facil variar un solo numero
-        int c = 2;
+        int c = 5;
         
         // 3 - creamos vectoriales
          String [] nombres = new String [c];
