@@ -10,7 +10,7 @@ public class Maxiserviciosautosok {
     
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        Random rand =new Random();
+        Random rand = new Random();
         
         
         /*
@@ -51,23 +51,22 @@ public class Maxiserviciosautosok {
         
         String [] servicios = new String [4];
         servicios [0] = "Alineacion";
-        servicios [1] = "Balanceo";//no olvidar pedir canti
+        servicios [1] = "Balanceo";//no olvidar pedir cantidad
         servicios [2] = "Cambio de aceite";
-        servicios [3] = "Cambio de cubiertas";//no olvidar pedir canti
+        servicios [3] = "Cambio de cubiertas";//no olvidar pedir cantidad
         
         //creamos 1 vector mas para cargar la info del tipito
         //nombre(0), dni(1), dominio(2), marca(3)
         String [] dataC = new String [4];
          /*
-        Necesitamos una matriz para indicar el servicio y la cantidad solicitada
-        Alineacion, balanceo, cambio aceite, cambio cubiertas(4)
-        Los servicios que no opten, quedan null y la cantidad tambien
+        Necesitamos un vector mas para indicar el servicio y la cantidad solicitada
+        Alineacion, balanceo, cambio aceite, cambio cubiertas
         */
         String [] serviciosC = new String [4];
         //vector para las cantidades de cada servicio
         int serviciosCA = 0;
          
-        //variable para ir recuperando los datos que elija el tipito e ir chequeando
+        //variables para ir recuperando los datos que elija el tipito e ir chequeando
         String data = "";
         String dataM = "";
         int marcaI = 0;
@@ -139,8 +138,9 @@ public class Maxiserviciosautosok {
             ///////////////////////////////////////////////////////////////////
             
            System.out.println("------------ SERVICIOS DISPONIBLES -------------");
-            System.out.println("------------------------------------------------");
-            
+           System.out.println("------------------------------------------------");
+           
+           //listamos los servicios
             for(int i=0; i<servicios.length; i++){
                 System.out.println(+i+ "-" +servicios[i]);    
                 }
@@ -262,20 +262,15 @@ public class Maxiserviciosautosok {
             }
             System.out.println("-------------------------------------------------");
             
-            //listamos la matriz
+            //listamos el vector servicios elegidos
             for(int i=0; i<serviciosC.length; i++){
-                    if (serviciosC[i] == null){
-                       
+                    if (serviciosC[i] == null){   
                     } else {
                     System.out.println(serviciosC[i]);    
                     }
                    
             }
-            
-            
-                   
-               
-            
+
             //cerramos el ticket
             System.out.println("------------------------------------------------");
             System.out.println("------ AGUARDE, EN MINUTOS LO ATENDEMOS ---------"); 
