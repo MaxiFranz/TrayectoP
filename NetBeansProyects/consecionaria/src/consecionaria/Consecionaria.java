@@ -21,14 +21,16 @@ public class Consecionaria {
          String n_cliente = "";
          String dni_cliente = "";
          String tel_cliente = "";
+         int precio_lista = 0;
          int precio_final = 0;
+         int recargo = 0;
          Date fecha = new Date();
         
         //variables para selecciones de tipito
         String id_modeloS = "";//grabamos el id del modelo seleccionado
         String id_producto = "";//grabamos el id de la gama seleccionada (producto especifico)
         int precioS = 0;//valor que sacamos de matriz lista de precios
-        
+        int plan = 0;//valor del plan seleccionado
         
         
         //creamos la matriz de modelos {id_modelo,nombre de modelo}
@@ -160,6 +162,7 @@ public class Consecionaria {
                 //aca el filtro es codigo de producto o codigo de gama
                if(listaP[filas][columnas]==(codigoP)){
                 System.out.print (listaP[+filas][+columnas+1]);
+                precio_lista = (listaP[+filas][+columnas+1]);   
                 System.out.print (" pesos");
                 System.out.print ("\n");
                 }
@@ -168,8 +171,63 @@ public class Consecionaria {
         
     System.out.println("-------------------------------------------------");                
     //////////////////////////////////////////////////////////////////////////
-     
+    /*
+    Seleccionar PLAN , vector con los planes Efectivo , 70/30 , 80/20 y 100% financiado.
+    Precio Final depende del plan
+    1 - Efectivo sin incremento  cuota 1
+    2 - 70/30 al precio se le debe incrementar un 70% cuota 120
+    3 - 80/20 al precio se le debe incrementar un 80% cuota 85
+    4 - 100 al precio se le debe incrementar un 100%  cuota 240
+    */        
+        
+    System.out.println("------------ Opciones de financiacion ------------");    
+    System.out.println("1 - 1 Solo pago");
+    System.out.println("2 - 85 cuotas - 80% de interes");
+    System.out.println("3 - 120 cuotas - 70% de interes");
+    System.out.println("4 - 240 cuotas - 100% de interes");
+    System.out.println("--------------------------------------------------);
     
+     do {
+            System.out.print("Indique el plan de financiacion : ");              
+            data = teclado.next();
+                switch (data){
+                    case "1":
+                    System.out.println("Plan 1 - 1 Solo pago - Sin recargo");       
+                    precio_final = precio_lista;
+                    plan = "1";
+                    break;
+                        
+                    case "2":
+                    System.out.println("Plan 2 - 85 cuotas - 80% de interes");
+                    recargo = 80 * precio_lista / 100;
+                    precio_final = precio_lista  + recargo;
+                    plan = "2";
+                    break;
+                        
+                    case "3":
+                    System.out.println("Plan  3 - 120 cuotas - 70% de interes");
+                    recargo = 70 * precio_lista / 100;
+                    precio_final = precio_lista  + recargo;  
+                    plan = "3";
+                    break;
+                        
+                    case "4"
+                    System.out.println("PLan 4 - 240 cuotas - 100% de interes");
+                    precio_final = precio_lista  * 2;  
+                    plan = "4";
+                    break;   
+                        
+                    default:
+                    System.out.print("El dato ingresado no es una opcion valida!");   
+                    break;    
+                }
+         
+     } while (plan == "0");//mientras el tipito no selecciona el plan queda aca. 
+     
+      System.out.println("--------------------------------------------------");
+      System.out.println("------ Precio final:  $"  +precio_final+ " -------");               
+      System.out.println("--------------------------------------------------");   
+                       
     }
     
 }
