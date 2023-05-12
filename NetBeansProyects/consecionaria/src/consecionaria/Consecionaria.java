@@ -16,10 +16,18 @@ public class Consecionaria {
         String data = "";//para recuperar los datos que ingrese
         String coordenadas = "";
         
+        //variables de informacion para presupueto
+         String n_vendedor = "";
+         String n_cliente = "";
+         String dni_cliente = "";
+         String tel_cliente = "";
+        
         //variables para selecciones de tipito
         String id_modeloS = "";//grabamos el id del modelo seleccionado
         String id_producto = "";//grabamos el id de la gama seleccionada (producto especifico)
         int precioS = 0;//valor que sacamos de matriz lista de precios
+        
+        
         
         //creamos la matriz de modelos {id_modelo,nombre de modelo}
         String [][] modelos = {{"1","CRONOS"},{"2","ARGO"},{"3","MOBI"}};
@@ -87,11 +95,12 @@ public class Consecionaria {
         */
         
         System.out.println("------ Opciones de gama para este modelo --------");
-        
-        //aca tomamos el valor de id_modelos y lo usamos para filtrar la gama o productos disponibles
-        
+       
+        //recorremos matriz gamas
         for(int filas=0;filas<gamas.length;filas++){
             for(int columnas=0;columnas<gamas[filas].length;columnas++){
+                
+                //filtramos por id_modelos
                 if(gamas[filas][columnas].equals(id_modeloS)){
                 //aca leemos id_modelo
                 System.out.print (gamas[+filas][+columnas]);
@@ -138,14 +147,15 @@ public class Consecionaria {
     
             int codigoP = Integer.parseInt(id_producto);
             //System.out.println(codigoP); 
-      
     
     System.out.println("-------------------------------------------------"); 
     System.out.print("El valor del modelo / gama seleccionado es $"); 
     
-    //aca buscamos el precio segun el codigo del producto
+    //recorremos la lista de precios
     for(int filas=0;filas<listaP.length;filas++){
             for(int columnas=0;columnas<listaP[filas].length;columnas++){
+                
+                //aca el filtro es codigo de producto o codigo de gama
                if(listaP[filas][columnas]==(codigoP)){
                 System.out.print (listaP[+filas][+columnas+1]);
                 System.out.print (" pesos");
@@ -153,9 +163,11 @@ public class Consecionaria {
                 }
             }
         }    
+        
     System.out.println("-------------------------------------------------");                
     //////////////////////////////////////////////////////////////////////////
      
+    
     }
     
 }
