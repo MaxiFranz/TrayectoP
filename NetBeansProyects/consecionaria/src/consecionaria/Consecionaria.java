@@ -25,9 +25,9 @@ public class Consecionaria {
         String [][] modelos = {{"1","CRONOS"},{"2","ARGO"},{"3","MOBI"}};
         
         //creamos la matriz de gamas {id_modelo,codigoproducto, nombre de gama}
-        String [][] gamas = {{"1","771","Baja"},{"1","772","Media"},{"1","773","Alta"},
-                            {"2","801","Baja"},{"2","802","Media"},{"2","803","Alta"},
-                            {"3","910","Baja"},{"3","915","Media"},{"3","917","Alta"}};
+        String [][] gamas = {{"1","771","Like 1.3 MT"},{"1","772","Drive Plus 1.3 MT"},{"1","773","Precision 1.3 MT"},
+                            {"2","801","Drive 1.8 MT "},{"2","802","Presicion AT 1.8 MT"},{"2","803","Presicion HGT 1.8 MT"},
+                            {"3","910","Like 2.0"},{"3","915","Easy 2.0"},{"3","917","Way 2.0"}};
         
         //creamos la matriz de precios donde: {idgama,precio}
         int [][] listaP = {{771,10},{772,100},{773,1000},{801,20},{802,200},{803,2000},{910,30},{915,300},{917,3000}};
@@ -155,7 +155,7 @@ public class Consecionaria {
         }    
     System.out.println("-------------------------------------------------");                
     //////////////////////////////////////////////////////////////////////////
-    
+     
     }
     
 }
