@@ -21,6 +21,8 @@ public class Consecionaria {
          String n_cliente = "";
          String dni_cliente = "";
          String tel_cliente = "";
+         int precio_final = 0;
+         Date fecha = new Date();
         
         //variables para selecciones de tipito
         String id_modeloS = "";//grabamos el id del modelo seleccionado
