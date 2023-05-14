@@ -1,15 +1,14 @@
 
-package consesionario;
+package fiat_concecionaria;
 
 import java.util.Date;
 import java.util.Scanner;
 
-public class Consesionario {
+public class Fiat_concecionaria {
 
     
     public static void main(String[] args) {
-        
-         //creamos metodo para ingreso de datos
+       //creamos metodo para ingreso de datos
          Scanner teclado = new Scanner(System.in);
          
         //creamos variables necesarias
@@ -21,9 +20,14 @@ public class Consesionario {
          String n_cliente = "";
          String dni_cliente = "";
          String tel_cliente = "";
+         //variables para financiacion
          int precio_lista = 0;
          int precio_final = 0;
          int recargo = 0;
+         int primerpago = 0;
+         int dif_pagop = 0;
+         int valor_cuota = 0;
+         
          Date fecha = new Date();
         
         //variables para selecciones de tipito
@@ -31,7 +35,6 @@ public class Consesionario {
         String id_producto = "";//grabamos el id de la gama seleccionada (producto especifico)
         int precioS = 0;//valor que sacamos de matriz lista de precios
         int plan = 0;//valor del plan seleccionado
-        
         
         //creamos la matriz de modelos {id_modelo,nombre de modelo}
         String [][] modelos = {{"1","CRONOS"},{"2","ARGO"},{"3","MOBI"}};
@@ -42,7 +45,7 @@ public class Consesionario {
                             {"3","910","Like 2.0"},{"3","915","Easy 2.0"},{"3","917","Way 2.0"}};
         
         //creamos la matriz de precios donde: {idgama,precio}
-        int [][] listaP = {{771,10},{772,100},{773,1000},{801,20},{802,200},{803,2000},{910,30},{915,300},{917,3000}};
+        int [][] listaP = {{771,1000},{772,10000},{773,100000},{801,2000},{802,20000},{803,200000},{910,3000},{915,30000},{917,300000}};
         
         
         //listamos los modelos disponibles
@@ -108,8 +111,8 @@ public class Consesionario {
                 //filtramos por id_modelos
                 if(gamas[filas][columnas].equals(id_modeloS)){
                 //aca leemos id_modelo
-                System.out.print (gamas[+filas][+columnas]);
-                System.out.print (" - ");
+                //System.out.print (gamas[+filas][+columnas]);
+                //System.out.print (" - ");
                 //aca leemos id_gama o codigo de producto
                 System.out.print (gamas[+filas][+columnas+1]);
                 System.out.print (" - ");
@@ -122,6 +125,7 @@ public class Consesionario {
         }
     
         System.out.println("-------------------------------------------------");    
+    
         
     do {
        System.out.print("Seleccione el producto / gama: ");
@@ -129,6 +133,7 @@ public class Consesionario {
         
         for(int filas=0;filas<gamas.length;filas++){
             for(int columnas=0;columnas<gamas[filas].length;columnas++){
+                
                 if(gamas[filas][columnas].equals(data)){
                     coordenadas+="["+filas+","+columnas+"]"+"\n";
                 }
@@ -153,8 +158,8 @@ public class Consesionario {
             int codigoP = Integer.parseInt(id_producto);
             //System.out.println(codigoP); 
     
-    System.out.println("-------------------------------------------------"); 
-    System.out.print("El valor del modelo / gama seleccionado es $"); 
+    System.out.println("---------------------------------------------------"); 
+    System.out.print("El valor del producto es $"); 
     
     //recorremos la lista de precios
     for(int filas=0;filas<listaP.length;filas++){
@@ -170,22 +175,13 @@ public class Consesionario {
             }
         }    
         
-    System.out.println("-------------------------------------------------");                
-    //////////////////////////////////////////////////////////////////////////
-    /*
-    Seleccionar PLAN , vector con los planes Efectivo , 70/30 , 80/20 y 100% financiado.
-    Precio Final depende del plan
-    1 - Efectivo sin incremento  cuota 1
-    2 - 70/30 al precio se le debe incrementar un 70% cuota 120
-    3 - 80/20 al precio se le debe incrementar un 80% cuota 85
-    4 - 100 al precio se le debe incrementar un 100%  cuota 240
-    */        
+    System.out.println("-------------------------------------------------");               
         
     System.out.println("------------ Opciones de financiacion ------------");    
     System.out.println("1 - 1 Solo pago");
-    System.out.println("2 - 85 cuotas - 80% de interes");
-    System.out.println("3 - 120 cuotas - 70% de interes");
-    System.out.println("4 - 240 cuotas - 100% de interes");
+    System.out.println("2 - Paga el 30 % y el 70% en 120 cuotas - Recargo 70%");
+    System.out.println("3 - Paga el 20 % y el 80% en 85 cuotas - Recargo 85%");
+    System.out.println("4 - Financia el total en 240 cuotas - Recargo 100%");
     System.out.println("--------------------------------------------------");
     
      do {
@@ -199,22 +195,41 @@ public class Consesionario {
                     break;
                         
                     case "2":
-                    System.out.println("Plan 2 - 85 cuotas - 80% de interes");
-                    recargo = 80 * precio_lista / 100;
-                    precio_final = precio_lista  + recargo;
+                    System.out.println("Paga el 30 % y el 70% en 120 cuotas - Recargo 70%");
+                    primerpago = 30 * precio_lista / 100;//calculamos lo que paga para comenzar
+                    dif_pagop = precio_lista - primerpago;//calculamos el resto a financiar
+                    recargo = 70 * dif_pagop / 100;//calculamos el recargo
+                    precio_final = primerpago + dif_pagop  + recargo;//sumamos todo
+                    valor_cuota = (dif_pagop  + recargo)/120;//calculamos valor cuota
+                    
+                    //mostramos el detalle final
+                    System.out.println("El cliente debe abonar 1 pago de $ " +primerpago);
+                    System.out.println("El resto $ " +dif_pagop+ " tiene un recargo de $ " +recargo);
+                    System.out.println("Valor cuota $ " +valor_cuota);
                     plan = 2;
                     break;
                         
                     case "3":
-                    System.out.println("Plan  3 - 120 cuotas - 70% de interes");
-                    recargo = 70 * precio_lista / 100;
-                    precio_final = precio_lista  + recargo;  
+                    System.out.println("Paga el 20 % y el 80% en 85 cuotas - Recargo 85%");
+                    primerpago = 20 * precio_lista / 100;//calculamos lo que paga para comenzar
+                    dif_pagop = precio_lista - primerpago;//calculamos el resto a financiar
+                    recargo = 80 * precio_lista / 100;//calculamos el recargo
+                    precio_final = primerpago + dif_pagop  + recargo;//sumamos todo
+                    valor_cuota = (dif_pagop  + recargo)/85;//calculamos valor cuota
+                    
+                    //mostramos el detalle final
+                    System.out.println("El cliente debe abonar 1 pago de $ " +primerpago);
+                    System.out.println("El resto $ " +dif_pagop+ " tiene un recargo de $" +recargo);
+                    
+                    System.out.println("Valor cuota $ " +valor_cuota);
                     plan = 3;
                     break;
                         
                     case "4":
-                    System.out.println("PLan 4 - 240 cuotas - 100% de interes");
+                    System.out.println("Financia el total en 240 cuotas - Recargo 100%");
                     precio_final = precio_lista  * 2;  
+                    valor_cuota = precio_final/240;//calculamos valor cuota
+                    System.out.println("Valor cuota $ " +valor_cuota);
                     plan = 4;
                     break;   
                         
@@ -226,12 +241,30 @@ public class Consesionario {
      } while (plan == 0);//mientras el tipito no selecciona el plan queda aca. 
      
       System.out.println("--------------------------------------------------");
-      System.out.println("------ Precio final:  $"  +precio_final+ " -------");               
-      System.out.println("--------------------------------------------------");   
+        System.out.print("Nombre de vendedor : ");
+        data = teclado.next();
+                n_vendedor = data;
+        
+        System.out.print("Nombre de cliente : ");
+        data = teclado.next();
+                n_cliente = data;
+        
+        System.out.print("DNI cliente : ");
+        data = teclado.next();
+                dni_cliente = data;
+        
+        System.out.print("Telefono cliente : ");
+        data = teclado.next();
+                tel_cliente = data;
+        System.out.println("============== PRESUPUESTO FINAL ===============");
+        System.out.println("Nombre del vendedor : " +n_vendedor);
+        System.out.println("Nombre del cliente : " +n_cliente);
+        System.out.println("DNI cliente : " +dni_cliente);
+        System.out.println("Telefono cliente : " +tel_cliente);
+        System.out.println("-------------------------------------------------");
+        System.out.println("------ Precio final:  $"  +precio_final);               
+        System.out.println("--------------------------------------------------");   
                        
     }
     
 }
-    
-    
-
