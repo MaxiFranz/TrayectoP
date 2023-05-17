@@ -30,7 +30,7 @@ public class MaxiEjercicio16 {
         JOptionPane.showMessageDialog(null, "Atencion", "El usuario y/o la clave no son validas!", JOptionPane.WARNING_MESSAGE);
         }
         
-        } while (!usuarioR.equals(usuarioD) && !claveR.equals(claveD));
+        } while (!usuarioR.equals(usuarioD) || !claveR.equals(claveD));
      
         JOptionPane.showMessageDialog(null, "EXITO!", "El login es correcto. Bienvenido", JOptionPane.INFORMATION_MESSAGE);    
     }
