@@ -4,6 +4,8 @@
  */
 package joptionpane;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -28,13 +30,19 @@ public class Joptionpane {
                 //JOptionPane.showMessageDialog(null, "Este es un mensaje de pregunta", "Mensaje de pregunta", JOptionPane.QUESTION_MESSAGE);
                 
                 //inputde JOPTION
-                nombre = JOptionPane.showInputDialog(null, "Ingrese su nombre", "INPUT", JOptionPane.QUESTION_MESSAGE);
+                //nombre = JOptionPane.showInputDialog(null, "Ingrese su nombre", "INPUT", JOptionPane.QUESTION_MESSAGE);
                 
-                 JOptionPane.showMessageDialog(null, "El nombre del tipito es: " +nombre, "Mensaje de alerta", JOptionPane.WARNING_MESSAGE);
+                //JOptionPane.showMessageDialog(null, "El nombre del tipito es: " +nombre, "Mensaje de alerta", JOptionPane.WARNING_MESSAGE);
                 
                 
                 //int numero=Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero para multiplicar por 2"));
                 //int resultado = numero *2;
+                
+
+                ImageIcon bien = new ImageIcon("src/imagenes/bien.png");
+                JOptionPane.showMessageDialog(null,"Muy bien!!", "Su mensaje es positivo",JOptionPane.INFORMATION_MESSAGE,bien);
+                
+               
     }
     
 }
