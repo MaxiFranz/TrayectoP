@@ -56,6 +56,8 @@ e. Valor de la prima total
 
 package aseguradorq;
 
+import java.util.Random;
+import java.util.Date;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -120,6 +122,15 @@ public class Aseguradorq {
     int plusxantiguedad = 0;//valor a pagar segun antiguedad
     int valorcobertura = 0;//valor cobertura principal mas adicionales
     int valorcuota = 0;//valor cuota final
+    
+    //9. Variables de fecha y nro de poliza. Calculo y formateo
+    Date fecha = new Date();
+    String sfecha = fecha.toString();
+    String fecha2 = sfecha.substring(0,10);
+    
+    Random rand = new Random();
+    int npoliza = 0;
+    npoliza = rand.nextInt(1000)+1;
     
     ////////////////////////////////////////////////////////////////////////////
     ///////////////////// INTERFAZ PARA INGRESO DE DATOS ///////////////////////
@@ -404,10 +415,7 @@ while(resp==0 || items[4]==0) {
         System.out.println("=============== LE COMTE SEGUROS =================");
         System.out.println("*Los Patos 3650 - Ciudad Autonoma de Buenos Aires*");
         System.out.println("==================================================");
-        System.out.println("\n");
         System.out.println("================ POLIZA DE SEGUROS ===============");
-        System.out.println("\n");
-        
         System.out.println("--------------------------------------------------");
         
         //Detalles datos cliente
@@ -474,6 +482,8 @@ while(resp==0 || items[4]==0) {
         }
         System.out.println("--------------------------------------------------");
         System.out.println("Valor cuota total: " +valorcuota+ " pesos");
+        System.out.println("Fecha: " +fecha2);
+        System.out.println("Poliza N°: " +npoliza);
         System.out.println("--------------------------------------------------"); 
         System.out.println("--------------------------------------------------");
   }     
