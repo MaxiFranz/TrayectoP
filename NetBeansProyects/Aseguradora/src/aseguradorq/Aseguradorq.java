@@ -103,7 +103,7 @@ public class Aseguradorq {
     
     //6.Vector con marcas
     String [] marcas = new String [9];
-        //definimos valores de vector marcas
+        //definimos valores de vector marcas. Se pueden agregar mas
         marcas[0] = "FORD";
         marcas[1] = "RENAULT";
         marcas[2] = "FIAT";
@@ -178,13 +178,13 @@ public class Aseguradorq {
                                         infoauto[3] = valorTS;
             
                                         JOptionPane.showMessageDialog(null,
-                                     "La antiguedad del rodado es " +antiguedad+ " años", "Verificar", 
+                                     "La antiguedad del rodado es de " +antiguedad+ " años", "Verificar", 
                                      JOptionPane.INFORMATION_MESSAGE,auto);
                                         
                                     } else {
                                         //sino, avisamos que no se puede seguir
                                     JOptionPane.showMessageDialog(null,
-                                      "La antiguedad del rodado es " +antiguedad+ "\n No "
+                                      "La antiguedad del rodado es de " +antiguedad+ " años\n No "
                                                  + "podemos asegurarlo!", 
                                          "Atencion!",
                                          JOptionPane.WARNING_MESSAGE); 
