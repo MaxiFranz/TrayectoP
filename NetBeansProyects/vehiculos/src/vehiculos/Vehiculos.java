@@ -15,6 +15,10 @@ public class Vehiculos {
 
         int kilometraje = 0; 
         
+        //comienza el programa
+        ImageIcon bienvenida = new ImageIcon("src/img/cuentakilometros.jpg");
+        JOptionPane.showMessageDialog(null,"", "Bienvenido!",JOptionPane.INFORMATION_MESSAGE,bienvenida);
+    
         autos c1 = new autos();
         
         //ejecutamos primer metodo
