@@ -10,7 +10,6 @@ public class tools {
     String valorTS = "";//dato de entrada
     int valorTI = 0;//datos de salida
     
-    
     public void stringtoint(){
         boolean isNumeric = (valorTS.matches("[0-9]+"));
             if (isNumeric != true ){
@@ -29,9 +28,5 @@ public class tools {
             }
        
     }
-    
-    
-  
-        
-   
+
 }
