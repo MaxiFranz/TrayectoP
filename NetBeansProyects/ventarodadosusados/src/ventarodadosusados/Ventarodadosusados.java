@@ -14,6 +14,15 @@ public class Ventarodadosusados {
         rodados[1] = "1 - Autos";
         rodados[2] = "2 - Motos";
         
+        //atributto cantidad de puertas es unico de clase autos (ejercicio 4)
+        String [] cantPuertas = new String [4];
+        cantPuertas[0] = "2";
+        cantPuertas[1] = "3";
+        cantPuertas[2] = "4";
+        cantPuertas[3] = "5";
+        
+        int cantpuertasok = 0;
+        
         //2. Variables
         String valorTS = "";
         int valorTI = 0;
@@ -40,8 +49,12 @@ public class Ventarodadosusados {
           case 1:
           System.out.println(valorTI);
           c1.confirmaopcion();
+          //****************************************
+          //ejecutamos metodo que tiene clase autos
           c1.pedir();
+          //ejecutamos metodo que tiene clase autos
           c1.printmarca();
+
           break;
           case 2:
           System.out.println(valorTI);

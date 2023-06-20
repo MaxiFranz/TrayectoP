@@ -8,6 +8,7 @@ public class autos {
         
          //estos son los atributos
         String valorTS = "";
+        //marca es atributo de autos no de motos..
         String marca;
         
         //aca van los metodos
@@ -32,4 +33,7 @@ public class autos {
                                      "La marca ingresada es: " +valorTS, "Verificar", 
                                      JOptionPane.INFORMATION_MESSAGE,auto);
         }
+        
+       
+        
 }
