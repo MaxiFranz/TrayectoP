@@ -18,6 +18,8 @@ public class POOEjercicio12 {
         
         
         ImageIcon logo = new ImageIcon("src/imagenes/logo.jpg");
+        ImageIcon aparatos = new ImageIcon("src/imagenes/aparatos.jpg");
+        
         
         String valorTS = "null";
         int valorTI = 0;
@@ -31,7 +33,7 @@ public class POOEjercicio12 {
         
         //1 - bienvenida
         JOptionPane.showMessageDialog(null, 
-            "Bienvenido al registro de reparaciones", 
+            "", 
             "Tecnolab - Servicio Tecnico",
             JOptionPane.INFORMATION_MESSAGE,logo); 
     
@@ -41,36 +43,36 @@ public class POOEjercicio12 {
                     "Seleccione el articulo a ingresar", 
                     "",
                     JOptionPane.QUESTION_MESSAGE,
-                    null,artefactos,artefactos[0]);
+                    aparatos,artefactos,artefactos[0]);
         } while (valorTS == null);  
         //grabamos el aparato ingresado en la ficha
   
         String sCadena = valorTS;
         //seleccionamos los primeros tres caracteres del string
         String sSubCadena = sCadena.substring(0,1);
-        //lo convertimos en entero. listaprecios tiene valores enteros
+        //lo convertimos en entero. 
         valorTI = Integer.parseInt(sSubCadena);
         
         //3 - seteamos atributo dispositivo
         oper.setdispositivo(valorTI);
         //4 - recuperamos el valor que se paso prueba. Comentar linea
-        System.out.println("Dispositivo elegido es: " +oper.getdispositivo());
+        //System.out.println("Dispositivo elegido es: " +oper.getdispositivo());
         
-        
+        //De acuerdo al dispositivo seleccionado, vamos llamando clase / metodo
         if (oper.getdispositivo() == 1){
         v1 msj1 = new v1();   
         msj1.formulario();
-        msj1.bandared();
+        msj1.bandared();//metodo especifico de clase telefono
         msj1.mostrarficha();
         } else if (oper.getdispositivo() == 2){
         v2 msj2 = new v2(); 
         msj2.formulario();
-        msj2.conecdispositivos();
+        msj2.conecdispositivos();//metodo especifico de clase tablet
         msj2.mostrarficha();
         } else {
         v3 msj3 = new v3();
         msj3.formulario();
-        msj3.tipotv();
+        msj3.tipotv();//metodo especifico de clase televisores
         msj3.mostrarficha();
        }
        

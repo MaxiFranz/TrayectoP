@@ -10,8 +10,13 @@ public class operaciones {
     public int dispositivo;
     public String ncliente,marca, modelo,bateria,desperfecto,diferencial;
     
-    ImageIcon logo = new ImageIcon("src/Imagenes/ST.png");
-     
+    ImageIcon logo = new ImageIcon("src/imagenes/logo.jpg");
+    ImageIcon cliente = new ImageIcon("src/imagenes/cliente.jpg");
+    ImageIcon marcas = new ImageIcon("src/imagenes/marcas.jpg");
+    ImageIcon aparatos = new ImageIcon("src/imagenes/aparatos.jpg");
+    ImageIcon baterias = new ImageIcon("src/imagenes/baterias.jpg");
+    ImageIcon herramientas = new ImageIcon("src/imagenes/herramientas.jpg");
+    
     public void setdispositivo(int dispositivo){
         this.dispositivo = dispositivo;
     }    
@@ -26,13 +31,14 @@ public class operaciones {
     
   
         ncliente = (String) JOptionPane.showInputDialog(null,
-            "Ingrese el nro del cliente :",
+            "Ingrese nro del cliente :",
             "Ficha de ingreso",
-            JOptionPane.QUESTION_MESSAGE, logo,
+            JOptionPane.QUESTION_MESSAGE, 
+            cliente,
             null,
             "");
         
-        System.out.println("Nro de cliente : " +ncliente);
+        //System.out.println("Nro de cliente : " +ncliente);
         
     //*************************************************************************   
           //vector para marcas
@@ -51,10 +57,10 @@ public class operaciones {
                     "Seleccione la marca del producto", 
                     "Ficha de ingreso",
                     JOptionPane.QUESTION_MESSAGE,
-                    null,marcass,marcass[0]);
+                    marcas,marcass,marcass[0]);
         } while (marca == null);  
         
-        System.out.println("Marca : " +marca);
+        //System.out.println("Marca : " +marca);
         
     //*************************************************************************
     
@@ -62,12 +68,12 @@ public class operaciones {
         modelo = (String) JOptionPane.showInputDialog(null,
             "Ingrese el Modelo",
             "Ficha de ingreso",
-            JOptionPane.QUESTION_MESSAGE, logo,
+            JOptionPane.QUESTION_MESSAGE, aparatos,
             null,
             "");
         } while (modelo == null); 
         
-        System.out.println("Modelo : " +modelo);
+        //System.out.println("Modelo : " +modelo);
     
     //*************************************************************************
     
@@ -83,10 +89,10 @@ public class operaciones {
                     "Seleccione tipo de bateria", 
                     "Ficha de ingreso",
                     JOptionPane.QUESTION_MESSAGE,
-                    null,bateriass,bateriass[0]);
+                    baterias,bateriass,bateriass[0]);
         } while (bateria == null);  
         
-        System.out.println("Bateria : " +bateria);
+        //System.out.println("Bateria : " +bateria);
     
     //*************************************************************************
     
@@ -94,13 +100,14 @@ public class operaciones {
         desperfecto = (String) JOptionPane.showInputDialog(null,
             "Desperfecto",
             "Ficha de ingreso",
-            JOptionPane.QUESTION_MESSAGE, logo,
+            JOptionPane.QUESTION_MESSAGE, 
+            herramientas,
             null,
             "");
         
         } while (desperfecto == null); 
     
-        System.out.println("Desperfecto : " +desperfecto);
+        //System.out.println("Desperfecto : " +desperfecto);
         
     
     }

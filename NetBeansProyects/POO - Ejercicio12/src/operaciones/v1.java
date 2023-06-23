@@ -23,7 +23,7 @@ public class v1 extends operaciones {
                     null,redss,redss[0]);
         } while (diferencial == null);   
         
-        System.out.println("Detalle : " +diferencial);
+        //System.out.println("Detalle : " +diferencial);
     }
 
    

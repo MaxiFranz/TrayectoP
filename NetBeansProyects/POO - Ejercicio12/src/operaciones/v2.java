@@ -24,7 +24,7 @@ public class v2 extends operaciones{
                     null,conectdisp,conectdisp[0]);
         } while (diferencial == null);
         
-        System.out.println("Detalle : " +diferencial);
+        //System.out.println("Detalle : " +diferencial);
         
         
     }

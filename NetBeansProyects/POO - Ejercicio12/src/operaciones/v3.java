@@ -23,7 +23,7 @@ public class v3 extends operaciones{
                     null,tipotv,tipotv[0]);
         } while (diferencial == null);  
         
-       System.out.println("Detalle : " +diferencial);
+       //System.out.println("Detalle : " +diferencial);
     }
 
 }
