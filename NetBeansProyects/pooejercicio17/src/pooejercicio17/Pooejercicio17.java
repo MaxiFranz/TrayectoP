@@ -13,9 +13,7 @@ public class Pooejercicio17 extends JFrame implements ActionListener{
     //creamos variable etiqueta
     public JLabel etiqueta = null;
     public JLabel respuesta = null;
-    
-    //creamos los botones como variables
-    public JButton boton1,boton2;
+   
     
     //creamos variables para el texto de los botones
     String tboton1 = "1";
