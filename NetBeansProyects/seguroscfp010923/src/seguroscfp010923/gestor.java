@@ -21,6 +21,7 @@ public class gestor extends javax.swing.JFrame {
      */
     public gestor() {
         initComponents();
+        this.setLocationRelativeTo(null);
         Date myDate = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy H:m");
         String v_fechaComoCadena = sdf.format(new Date());
@@ -36,6 +37,50 @@ public class gestor extends javax.swing.JFrame {
     int valor2;
     int valor3;
     //***********************************************************
+    
+    //variables para datos en comun
+    String f1fecha;
+    String f1cuil;
+    String f1nombre;
+    String f1telefono;
+    String f1email;
+    String f1tipodeseguro;
+    
+    //resto de las variables
+    String v1;  
+    String v2; 
+    String v3; 
+    String v4;  
+    String v5;  
+    String v6;  
+    String v7; 
+    String v8;  
+    String v9; 
+    String v10;
+    String v11;  
+    String v12; 
+    String v13; 
+    String v14;  
+    String v15;  
+    String v16;  
+    String v17; 
+    String v18;  
+    String v19; 
+    String v20; 
+    String v21;
+    String v22;  
+    String v23; 
+    String v24; 
+    String v25;  
+    String v26;  
+    String v27;  
+    String v28; 
+    String v29;  
+    String v30; 
+    String v31; 
+    String v32; 
+    String v33; 
+    String v34;
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -110,6 +155,7 @@ public class gestor extends javax.swing.JFrame {
         s3_restobeneficiario = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         label_fecha = new javax.swing.JLabel();
+        b_vercontrataciones = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -180,6 +226,11 @@ public class gestor extends javax.swing.JFrame {
         jTabbedPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         b_grabarhogar.setText("CONTRATAR");
+        b_grabarhogar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_grabarhogarActionPerformed(evt);
+            }
+        });
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Coberturas"));
 
@@ -341,20 +392,25 @@ public class gestor extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(47, 47, 47))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(180, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(b_grabarhogar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                        .addContainerGap(180, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(b_grabarhogar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(47, 47, 47))))
         );
 
         jTabbedPane2.addTab("HOGAR", jPanel2);
 
         b_grabarvehiculo.setText("CONTRATAR");
+        b_grabarvehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_grabarvehiculoActionPerformed(evt);
+            }
+        });
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del vehiculo"));
 
@@ -422,6 +478,7 @@ public class gestor extends javax.swing.JFrame {
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Franquicia"));
 
         s2_combofranquicias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "20000", "40000", "60000", "80000", "100000" }));
+        s2_combofranquicias.setEnabled(false);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -443,6 +500,11 @@ public class gestor extends javax.swing.JFrame {
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder("Coberturas"));
 
         s2_chekTercerocompleto.setText("Tercero Completo");
+        s2_chekTercerocompleto.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                s2_chekTercerocompletoStateChanged(evt);
+            }
+        });
         s2_chekTercerocompleto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 s2_chekTercerocompletoActionPerformed(evt);
@@ -452,10 +514,25 @@ public class gestor extends javax.swing.JFrame {
         s2_chekresponsabilidadcivil.setText("Responsabilidad Civil");
 
         s2_triesgosinfranquicia.setText("Todo Riesgo Sin franquicia");
+        s2_triesgosinfranquicia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s2_triesgosinfranquiciaActionPerformed(evt);
+            }
+        });
 
         s2_triesgoconfranq.setText("Todo Riesgo Con Franquicia");
+        s2_triesgoconfranq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s2_triesgoconfranqActionPerformed(evt);
+            }
+        });
 
         s2_checkgranizo.setText("Granizo");
+        s2_checkgranizo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s2_checkgranizoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -703,9 +780,9 @@ public class gestor extends javax.swing.JFrame {
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(27, 27, 27)
                 .addComponent(b_grabarpvida, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -718,12 +795,14 @@ public class gestor extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(b_grabarpvida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                .addGap(46, 46, 46))
         );
 
         jTabbedPane2.addTab("VIDA", jPanel4);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/seguroscfp010923/imagenes/logo.png"))); // NOI18N
+
+        b_vercontrataciones.setText("CONTRATACIONES");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -745,8 +824,10 @@ public class gestor extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(b_vercontrataciones, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(b_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addGap(57, 57, 57))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -762,15 +843,87 @@ public class gestor extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(b_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(b_salir, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(b_vercontrataciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_grabarpvidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_grabarpvidaActionPerformed
-        // TODO add your handling code here:
+    //lineas que se repiten en cada boton contratar
+    archivo archi = new archivo();
+    archi.crearArchivo();
+    
+    //valores que tienen en comun. Solo cambiar tipo de seguro
+    f1fecha = this.label_fecha.getText();
+    f1cuil = this.input_cuil.getText();
+    f1nombre = this.input_nombre.getText();
+    f1telefono = this.input_telefono.getText();
+    f1email = this.input_email.getText();
+    f1tipodeseguro = "Vida";//
+    
+    //instanciamos variables para mensajero
+    if (this.s3_checkMuerte.isSelected()){
+        v22 = this.s3_checkMuerte.getText();
+    } else {
+        v22 = " ";
+    }
+    
+    if (this.s3_chekMuerteaccidental.isSelected()){
+       v23 = this.s3_chekMuerteaccidental.getText();
+    } else {
+        v23 = " ";
+    }
+     
+    if (this.s3_diasinternacion.isSelected()){
+       v24 = this.s3_diasinternacion.getText();
+       v25 =  (String) this.s3_comboDiasinternacion.getSelectedItem();
+    } else {
+        v24 = " ";
+        v25 = " ";
+    }
+    
+    if (this.s3_paralisis.isSelected()){
+       v26 = this.s3_diasinternacion.getText();
+    } else {
+        v26 = " ";
+    }
+      
+    v27 = this.s3_inputbeneficiario1.getText();
+    v28 = (String) this.s3_combobeneficiarios1.getSelectedItem();
+    
+    if (this.s3_inputbeneficiario2.isEnabled()){
+        v29 =  this.s3_inputbeneficiario2.getText();
+        v30 = (String) this.s3_combobeneficiarios2.getSelectedItem();
+    } else {
+       v29 = " ";
+       v30 = " ";
+    }
+    
+    if (this.s3_inputbeneficiario3.isEnabled()){
+        v31 = this.s3_inputbeneficiario3.getText();
+        v32 = (String) this.s3_combobeneficiarios3.getSelectedItem();
+    } else {
+       v31 = " ";
+       v32 = " ";
+    }
+    
+    if (this.s3_inputbeneficiario4.isEnabled()){
+         v33 = this.s3_inputbeneficiario4.getText();
+        v34 = (String) this.s3_restobeneficiario.getText();
+    } else {
+       v33 = " ";
+       v34 = " ";
+    }
+    
+     //creamos mensajero
+    Persona Persona = new Persona(f1tipodeseguro, f1fecha, f1cuil, f1nombre, f1telefono, f1email,v22,v23, v24,v25,v26,v27,v28,v29,v30,v31,v32,v33,v34);
+    archi.escribirArchivo(Persona);
+    this.limpiatutto();
+    
     }//GEN-LAST:event_b_grabarpvidaActionPerformed
 
     private void input_cuilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_cuilActionPerformed
@@ -885,7 +1038,13 @@ public class gestor extends javax.swing.JFrame {
     }//GEN-LAST:event_s2_combomarcasActionPerformed
 
     private void s2_chekTercerocompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s2_chekTercerocompletoActionPerformed
-        // TODO add your handling code here:
+    if (s2_chekTercerocompleto.isSelected()){
+        s2_chekresponsabilidadcivil.setSelected(true);
+        s2_chekresponsabilidadcivil.setEnabled(false);
+       } else {
+         s2_chekresponsabilidadcivil.setSelected(false);
+        s2_chekresponsabilidadcivil.setEnabled(true);
+    }
     }//GEN-LAST:event_s2_chekTercerocompletoActionPerformed
 
     private void s3_checkMuerteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s3_checkMuerteActionPerformed
@@ -918,7 +1077,216 @@ public class gestor extends javax.swing.JFrame {
     comboSvidaterceraopcion = (String) this.s3_combobeneficiarios3.getSelectedItem();
     this.calculaporcentaje3(comboSvidaterceraopcion);    // TODO add your handling code here:
     }//GEN-LAST:event_s3_combobeneficiarios3ActionPerformed
+
+    private void b_grabarhogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_grabarhogarActionPerformed
+    //lineas que se repiten en cada boton contratar
+    archivo archi = new archivo();
+    archi.crearArchivo();
     
+    //valores que tienen en comun. Solo cambiar tipo de seguro
+    f1fecha = this.label_fecha.getText();
+    f1cuil = this.input_cuil.getText();
+    f1nombre = this.input_nombre.getText();
+    f1telefono = this.input_telefono.getText();
+    f1email = this.input_email.getText();
+    f1tipodeseguro = "Hogar";//
+    
+    //instanciamos variables para mensajero
+    if (S1_chekIncendio.isSelected()){
+        v1 = S1_chekIncendio.getText();
+        v4 = (String) this.s1_comboincendio.getSelectedItem();
+    } else {
+         v1 = " ";
+         v4 = " ";       
+    }
+    if (s1_chekRobo.isSelected()){
+        v2 = s1_chekRobo.getText();
+         v5 = (String) this.s1_comborobo.getSelectedItem();
+    } else {
+         v2 = " ";
+         v5 = " ";       
+    } 
+    if (s1_chekInundacion.isSelected()){
+        v3 = s1_chekInundacion.getText();
+        v6 = (String) this.s1_comboinundacion.getSelectedItem();
+    } else {
+         v3 = " ";
+         v6 = " ";       
+    }  
+ 
+     if (S1_chekIheladera.isSelected()){
+        v7 = S1_chekIheladera.getText();
+    } else {
+         v7 = " ";
+     }
+     
+      if (S1_cheklavarropas.isSelected()){
+            v8 = S1_cheklavarropas.getText();
+    } else {
+         v8 = " ";
+     }
+      
+       if (S1_chekcocina.isSelected()){
+        v9 = S1_chekcocina.getText();
+    } else {
+        v9 = " ";
+     }
+        if (S1_cheknotebook.isSelected()){
+        v10 = S1_cheknotebook.getText();
+        v11 = this.s1_inputnotebook.getText();
+    }else {
+         v10 = " ";
+         v11 = " ";
+     }
+    
+    //creamos mensajero
+    Persona Persona = new Persona(f1tipodeseguro, f1fecha, f1cuil, f1nombre, f1telefono, f1email,v1,v4, v2,v5,v3,v6,v7,v8,v9,v10,v11);
+    archi.escribirArchivo(Persona);
+    this.limpiatutto();
+    }//GEN-LAST:event_b_grabarhogarActionPerformed
+
+    private void b_grabarvehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_grabarvehiculoActionPerformed
+     //lineas que se repiten en cada boton contratar
+    archivo archi = new archivo();
+    archi.crearArchivo();
+    
+    //valores que tienen en comun. Solo cambiar tipo de seguro
+    f1fecha = this.label_fecha.getText();
+    f1cuil = this.input_cuil.getText();
+    f1nombre = this.input_nombre.getText();
+    f1telefono = this.input_telefono.getText();
+    f1email = this.input_email.getText();
+    f1tipodeseguro = "Vehiculos";//
+    
+    //instanciamos variables para mensajero
+    v12 = this.s2_inputDominio.getText();
+    v13 = (String) this.s2_combomarcas.getSelectedItem();
+    v14 = (String) this.s2_combomodelos.getSelectedItem();
+    v15 = (String) this.s2_comboAño.getSelectedItem();
+    v16 = (String) this.s2_combofranquicias.getSelectedItem();
+    
+    if (s2_chekTercerocompleto.isSelected()){
+        v17 =  this.s2_chekTercerocompleto.getText();
+    } else {
+        v17 = " ";
+    }
+    
+    if (s2_chekresponsabilidadcivil.isSelected()){
+        v18 = this.s2_chekresponsabilidadcivil.getText();
+    } else {
+        v18 = " ";
+    }
+    
+    if (s2_triesgosinfranquicia.isSelected()){
+      v19 = this.s2_triesgosinfranquicia.getText();
+    } else {
+        v19 = " ";
+    }
+    
+    if (s2_triesgoconfranq.isSelected()){
+       v20 = this.s2_triesgoconfranq.getText();
+    } else {
+        v20 = " ";
+    }
+   
+    if (s2_checkgranizo.isSelected()){
+      v21 = this.s2_checkgranizo.getText();
+    } else {
+        v21 = " ";
+    }
+    
+    //creamos mensajero 
+    Persona persona = new Persona(f1tipodeseguro, f1fecha, f1cuil, f1nombre, f1telefono, f1email,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21);
+    archi.escribirArchivo(persona);
+    this.limpiatutto();
+    }//GEN-LAST:event_b_grabarvehiculoActionPerformed
+
+    private void s2_chekTercerocompletoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_s2_chekTercerocompletoStateChanged
+          // TODO add your handling code here:
+    }//GEN-LAST:event_s2_chekTercerocompletoStateChanged
+
+    private void s2_triesgosinfranquiciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s2_triesgosinfranquiciaActionPerformed
+    if (s2_triesgosinfranquicia.isSelected()) {
+     s2_chekresponsabilidadcivil.setSelected(true);
+        s2_chekresponsabilidadcivil.setEnabled(false);
+       } else {
+         s2_chekresponsabilidadcivil.setSelected(false);
+        s2_chekresponsabilidadcivil.setEnabled(true);
+    }// TODO add your handling code here:
+    }//GEN-LAST:event_s2_triesgosinfranquiciaActionPerformed
+
+    private void s2_triesgoconfranqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s2_triesgoconfranqActionPerformed
+    if (s2_triesgoconfranq.isSelected()){
+        s2_chekresponsabilidadcivil.setSelected(true);
+        s2_chekresponsabilidadcivil.setEnabled(false);
+        s2_combofranquicias.setEnabled(true);
+        
+       } else {
+         s2_chekresponsabilidadcivil.setSelected(false);
+         s2_chekresponsabilidadcivil.setEnabled(true);
+         s2_combofranquicias.setEnabled(false);
+        
+    }    
+    
+    }//GEN-LAST:event_s2_triesgoconfranqActionPerformed
+
+    private void s2_checkgranizoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s2_checkgranizoActionPerformed
+   if (s2_checkgranizo.isSelected()){
+        s2_chekresponsabilidadcivil.setSelected(true);
+        s2_chekresponsabilidadcivil.setEnabled(false); 
+        s2_triesgosinfranquicia.setSelected(true);
+        s2_triesgosinfranquicia.setEnabled(false);
+   }else {
+       s2_chekresponsabilidadcivil.setSelected(false);
+        s2_chekresponsabilidadcivil.setEnabled(true); 
+        s2_triesgosinfranquicia.setSelected(false);
+            s2_triesgosinfranquicia.setEnabled(true);   
+   }
+    
+    }//GEN-LAST:event_s2_checkgranizoActionPerformed
+    
+    
+    
+    
+    //seccion de metodos de los formularios!!!!!!!!!!!!!!***************************************
+    
+    
+    public void limpiatutto(){
+    this.S1_chekIncendio.setSelected(false);
+    this.s1_chekRobo.setSelected(false);
+    this.s1_chekInundacion.setSelected(false);
+    this.s1_comboincendio.setSelectedIndex(0);
+    this.s1_comborobo.setSelectedIndex(0);
+    this.s1_comboinundacion.setSelectedIndex(0);
+    this.S1_chekIheladera.setSelected(false);
+    this.S1_cheklavarropas.setSelected(false);
+    this.S1_chekcocina.setSelected(false);
+    this.S1_cheknotebook.setSelected(false);       
+    this.s1_inputnotebook.setText("");
+    this.s2_inputDominio.setText("");
+    this.s2_combomarcas.setSelectedIndex(0);
+    this.s2_combomodelos.setSelectedIndex(0);
+    this.s2_comboAño.setSelectedIndex(0);
+    this.s2_combofranquicias.setSelectedIndex(0);
+    this.s2_chekTercerocompleto.setSelected(false);
+    this.s2_chekresponsabilidadcivil.setSelected(false);
+    this.s2_triesgosinfranquicia.setSelected(false);
+    this.s2_triesgoconfranq.setSelected(false);
+    this.s2_checkgranizo.setSelected(false);
+    this.s3_checkMuerte.setSelected(false);
+    this.s3_chekMuerteaccidental.setSelected(false);
+    this.s3_diasinternacion.setSelected(false);
+    this.s3_comboDiasinternacion.setSelectedIndex(0);
+    this.s3_paralisis.setSelected(false);
+    this.s3_inputbeneficiario1.setText("");
+    this.s3_combobeneficiarios1.setSelectedIndex(0);
+    this.s3_inputbeneficiario2.setText("");
+    this.s3_combobeneficiarios2.setSelectedIndex(0);
+    this.s3_inputbeneficiario3.setText("");
+    this.s3_combobeneficiarios3.setSelectedIndex(0);
+    this.s3_inputbeneficiario4.setText("");
+    this.s3_restobeneficiario.setText("");
+    }
     //aca creamos las opciones que usaremos de acuerdo a la diferencia
     private String [] porcentajesr0 = {"10","20","30","40","50","60","70","80","90"};
     private String [] porcentajesr1 = {"10","20","30","40","50","60","70","80"};
@@ -1083,6 +1451,7 @@ public class gestor extends javax.swing.JFrame {
     private javax.swing.JButton b_grabarpvida;
     private javax.swing.JButton b_grabarvehiculo;
     private javax.swing.JButton b_salir;
+    private javax.swing.JButton b_vercontrataciones;
     private javax.swing.JTextField input_cuil;
     private javax.swing.JTextField input_email;
     private javax.swing.JTextField input_nombre;
