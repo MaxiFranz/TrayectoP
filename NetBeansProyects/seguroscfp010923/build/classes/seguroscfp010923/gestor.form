@@ -160,13 +160,23 @@
         <Component class="javax.swing.JTextField" name="input_cuil">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="input_cuilActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="input_cuilKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="input_nombre">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="input_nombreKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="input_telefono">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="input_telefonoKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="input_email">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="input_emailKeyTyped"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -6,4 +6,12 @@ Hogar,sas,asas,asdas,adas,Incendio,Parcial,Robo,Parcial,Inundacion,Parcial, , , 
 Vehiculos,ASAS,ASAS,ASD,SAS,SDAS,Ford,Maverick,2022,20000,Tercero Completo,Responsabilidad Civil,Todo Riesgo Sin franquicia,Todo Riesgo Con Franquicia,Granizo
 Vehiculos,123456,Roberto Sanchez,78946,roberto@sandro.com.ar,ab456,Ford,Raptor,2019,20000,Tercero Completo,Responsabilidad Civil,Todo Riesgo Sin franquicia,Todo Riesgo Con Franquicia,Granizo
 Hogar,123,Pedro Duggan,2317135,c5n@tv.com.ar,Incendio,Parcial,Robo,Total,Inundacion,Total,Heladera,Lavarropas,Cocina,Notebook,2
-Vida,2327135,Viviana Canosa,212213,canosa@lnmas.com.ar,Muerte,Muerte accidental,Dias de internación,30Dias de internación,Jaime Vila,100,  , , , , 
+Vida,2327135,Viviana Canosa,212213,canosa@lnmas.com.ar,Muerte,Muerte accidental,Dias de internación,30Dias de internación,Jaime Vila,100,  , , , , Hogar,,,,pepe, , , , , , , , , , , 
+Hogar,123456,gfbn vbcv,123456,dfsd,Incendio,Parcial, , , , , ,Lavarropas,Cocina, , 
+Hogar,1234,vcxvxv,1255,hgfgg,Incendio,Parcial, , , , ,Heladera, , , , 
+Hogar,454,xcxcz,1335,fgdfdf,Incendio,Parcial,Robo,Parcial,Inundacion,Total, , ,Cocina, , 
+Hogar,1245,dfsf,123,cxcxc,Incendio,Parcial,Robo,Parcial,Inundacion,Parcial, ,Lavarropas,Cocina, , 
+Hogar,13,vcbc,123,eppe@pepe.com, , , , , , , , , , , 
+Hogar,12345,dfsddf,123,pepe@pepe.com, , , , , , , , , , , 
+Hogar,12345,dfsddf,123,pepe@pepe, , , , , , , , , , , 
+Hogar,123,fdfsf,123, pepe@pepe.com, , , , , , , , , , , 

@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.lang.String;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,7 +29,39 @@ public class gestor extends javax.swing.JFrame {
         this.label_fecha.setText(v_fechaComoCadena);
         
     }
+    
+    boolean arroba = false;
+    boolean punto = false;
+    int paso = 0;
+    String mail;
+    
+    public void validamail(){
+        mail = this.input_email.getText();
+        
+         for (int i = 0; i<mail.length(); i++) {
 
+        for (int j = 0; j<mail.length(); j++) {
+
+            if(mail.charAt(i)=='@' && mail.charAt(j)=='.') {
+
+                arroba = true;
+                punto = true;
+            }
+
+        }
+
+    }
+
+    if (arroba == true && punto == true) {
+        paso = 1;
+        System.out.println("El mail ingresado es correcto");
+    }
+    else {
+        System.out.println("El mail ingresado es incorrecto");
+        }
+
+    }
+            
     //variables para calculo seguro vida porcentaje
     String comboSvidaprimeraopcion;  
     String comboSvidasegundaopcion;
@@ -172,6 +205,29 @@ public class gestor extends javax.swing.JFrame {
         input_cuil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_cuilActionPerformed(evt);
+            }
+        });
+        input_cuil.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                input_cuilKeyTyped(evt);
+            }
+        });
+
+        input_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                input_nombreKeyTyped(evt);
+            }
+        });
+
+        input_telefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                input_telefonoKeyTyped(evt);
+            }
+        });
+
+        input_email.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                input_emailKeyTyped(evt);
             }
         });
 
@@ -922,7 +978,7 @@ public class gestor extends javax.swing.JFrame {
      //creamos mensajero
     Persona Persona = new Persona(f1tipodeseguro, f1fecha, f1cuil, f1nombre, f1telefono, f1email,v22,v23, v24,v25,v26,v27,v28,v29,v30,v31,v32,v33,v34);
     archi.escribirArchivo(Persona);
-    this.limpiatutto();
+    
     
     }//GEN-LAST:event_b_grabarpvidaActionPerformed
 
@@ -1079,7 +1135,15 @@ public class gestor extends javax.swing.JFrame {
     }//GEN-LAST:event_s3_combobeneficiarios3ActionPerformed
 
     private void b_grabarhogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_grabarhogarActionPerformed
-    //lineas que se repiten en cada boton contratar
+    
+    this.validamail();
+    if (paso == 1){
+        
+    
+    //vamos a validar el correo aca
+    
+
+
     archivo archi = new archivo();
     archi.crearArchivo();
     
@@ -1142,7 +1206,11 @@ public class gestor extends javax.swing.JFrame {
     //creamos mensajero
     Persona Persona = new Persona(f1tipodeseguro, f1fecha, f1cuil, f1nombre, f1telefono, f1email,v1,v4, v2,v5,v3,v6,v7,v8,v9,v10,v11);
     archi.escribirArchivo(Persona);
-    this.limpiatutto();
+    
+    this.limpiatutto1();
+    } else {
+        this.input_email.setText(" ");
+    }
     }//GEN-LAST:event_b_grabarhogarActionPerformed
 
     private void b_grabarvehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_grabarvehiculoActionPerformed
@@ -1198,7 +1266,7 @@ public class gestor extends javax.swing.JFrame {
     //creamos mensajero 
     Persona persona = new Persona(f1tipodeseguro, f1fecha, f1cuil, f1nombre, f1telefono, f1email,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21);
     archi.escribirArchivo(persona);
-    this.limpiatutto();
+    
     }//GEN-LAST:event_b_grabarvehiculoActionPerformed
 
     private void s2_chekTercerocompletoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_s2_chekTercerocompletoStateChanged
@@ -1244,6 +1312,51 @@ public class gestor extends javax.swing.JFrame {
    }
     
     }//GEN-LAST:event_s2_checkgranizoActionPerformed
+
+    private void input_cuilKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_cuilKeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key <=57;
+       
+        if (!numeros){
+         evt.consume();
+         
+        }            
+        if (input_cuil.getText().length()>=11){
+       evt.consume();
+       }
+    }//GEN-LAST:event_input_cuilKeyTyped
+
+    private void input_telefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_telefonoKeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key <=57;
+       
+        if (!numeros){
+         evt.consume();
+         
+        }            
+        if (input_telefono.getText().length()>=11){
+        evt.consume();
+        } 
+    }//GEN-LAST:event_input_telefonoKeyTyped
+
+    private void input_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_nombreKeyTyped
+        int key = evt.getKeyChar();
+        boolean min = key >=97 && key <=122;
+        boolean espacio = key ==32;
+        boolean may = key >=65 && key <=90;
+     
+        if (!(min || espacio|| may)){
+        evt.consume();    
+        }
+
+        if (input_nombre.getText().length()>=50){
+        evt.consume();
+        } // TODO add your handling code here:
+    }//GEN-LAST:event_input_nombreKeyTyped
+
+    private void input_emailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_emailKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_input_emailKeyTyped
     
     
     
@@ -1251,41 +1364,21 @@ public class gestor extends javax.swing.JFrame {
     //seccion de metodos de los formularios!!!!!!!!!!!!!!***************************************
     
     
-    public void limpiatutto(){
+    public void limpiatutto1(){
     this.S1_chekIncendio.setSelected(false);
     this.s1_chekRobo.setSelected(false);
     this.s1_chekInundacion.setSelected(false);
     this.s1_comboincendio.setSelectedIndex(0);
+    this.s1_comboincendio.setEnabled(false);
     this.s1_comborobo.setSelectedIndex(0);
+    this.s1_comborobo.setEnabled(false);
     this.s1_comboinundacion.setSelectedIndex(0);
+    this.s1_comboinundacion.setEnabled(false);
     this.S1_chekIheladera.setSelected(false);
     this.S1_cheklavarropas.setSelected(false);
     this.S1_chekcocina.setSelected(false);
     this.S1_cheknotebook.setSelected(false);       
     this.s1_inputnotebook.setText("");
-    this.s2_inputDominio.setText("");
-    this.s2_combomarcas.setSelectedIndex(0);
-    this.s2_combomodelos.setSelectedIndex(0);
-    this.s2_comboAño.setSelectedIndex(0);
-    this.s2_combofranquicias.setSelectedIndex(0);
-    this.s2_chekTercerocompleto.setSelected(false);
-    this.s2_chekresponsabilidadcivil.setSelected(false);
-    this.s2_triesgosinfranquicia.setSelected(false);
-    this.s2_triesgoconfranq.setSelected(false);
-    this.s2_checkgranizo.setSelected(false);
-    this.s3_checkMuerte.setSelected(false);
-    this.s3_chekMuerteaccidental.setSelected(false);
-    this.s3_diasinternacion.setSelected(false);
-    this.s3_comboDiasinternacion.setSelectedIndex(0);
-    this.s3_paralisis.setSelected(false);
-    this.s3_inputbeneficiario1.setText("");
-    this.s3_combobeneficiarios1.setSelectedIndex(0);
-    this.s3_inputbeneficiario2.setText("");
-    this.s3_combobeneficiarios2.setSelectedIndex(0);
-    this.s3_inputbeneficiario3.setText("");
-    this.s3_combobeneficiarios3.setSelectedIndex(0);
-    this.s3_inputbeneficiario4.setText("");
-    this.s3_restobeneficiario.setText("");
     }
     //aca creamos las opciones que usaremos de acuerdo a la diferencia
     private String [] porcentajesr0 = {"10","20","30","40","50","60","70","80","90"};
