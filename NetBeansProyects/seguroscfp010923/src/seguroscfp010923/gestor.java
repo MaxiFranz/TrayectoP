@@ -131,7 +131,6 @@ public class gestor extends javax.swing.JFrame {
         b_salir = new javax.swing.JButton();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
-        b_grabarhogar = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         S1_chekIncendio = new javax.swing.JCheckBox();
         s1_chekRobo = new javax.swing.JCheckBox();
@@ -148,8 +147,10 @@ public class gestor extends javax.swing.JFrame {
         S1_chektelevisor = new javax.swing.JCheckBox();
         s1_inputnotebook = new javax.swing.JTextField();
         s1_inputtelevisor = new javax.swing.JTextField();
+        jPanel13 = new javax.swing.JPanel();
+        b_grabarhogar = new javax.swing.JButton();
+        b_limpiatutto1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        b_grabarvehiculo = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -167,8 +168,10 @@ public class gestor extends javax.swing.JFrame {
         s2_triesgosinfranquicia = new javax.swing.JCheckBox();
         s2_triesgoconfranq = new javax.swing.JCheckBox();
         s2_checkgranizo = new javax.swing.JCheckBox();
+        jPanel14 = new javax.swing.JPanel();
+        b_grabarvehiculo = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        b_grabarpvida = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         s3_checkMuerte = new javax.swing.JCheckBox();
         s3_chekMuerteaccidental = new javax.swing.JCheckBox();
@@ -186,6 +189,9 @@ public class gestor extends javax.swing.JFrame {
         s3_combobeneficiarios2 = new javax.swing.JComboBox<>();
         s3_combobeneficiarios3 = new javax.swing.JComboBox<>();
         s3_restobeneficiario = new javax.swing.JTextField();
+        jPanel15 = new javax.swing.JPanel();
+        b_grabarpvida = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         label_fecha = new javax.swing.JLabel();
         b_vercontrataciones = new javax.swing.JButton();
@@ -280,13 +286,6 @@ public class gestor extends javax.swing.JFrame {
         });
 
         jTabbedPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        b_grabarhogar.setText("CONTRATAR");
-        b_grabarhogar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b_grabarhogarActionPerformed(evt);
-            }
-        });
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Coberturas"));
 
@@ -427,7 +426,42 @@ public class gestor extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(S1_chektelevisor)
                     .addComponent(s1_inputtelevisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+
+        b_grabarhogar.setText("CONTRATAR");
+        b_grabarhogar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_grabarhogarActionPerformed(evt);
+            }
+        });
+
+        b_limpiatutto1.setText("LIMPIAR FORMULARIO");
+        b_limpiatutto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_limpiatutto1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(b_grabarhogar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(b_limpiatutto1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap(113, Short.MAX_VALUE)
+                .addComponent(b_grabarhogar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(b_limpiatutto1)
+                .addGap(27, 27, 27))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -438,9 +472,9 @@ public class gestor extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(b_grabarhogar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -449,24 +483,17 @@ public class gestor extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(180, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(b_grabarhogar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(47, 47, 47))))
         );
 
         jTabbedPane2.addTab("HOGAR", jPanel2);
-
-        b_grabarvehiculo.setText("CONTRATAR");
-        b_grabarvehiculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b_grabarvehiculoActionPerformed(evt);
-            }
-        });
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del vehiculo"));
 
@@ -550,7 +577,7 @@ public class gestor extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(s2_combofranquicias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder("Coberturas"));
@@ -617,7 +644,42 @@ public class gestor extends javax.swing.JFrame {
                 .addComponent(s2_triesgoconfranq)
                 .addGap(18, 18, 18)
                 .addComponent(s2_checkgranizo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
+        b_grabarvehiculo.setText("CONTRATAR");
+        b_grabarvehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_grabarvehiculoActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("LIMPIAR FORMULARIO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(b_grabarvehiculo, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(b_grabarvehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(43, 43, 43))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -631,35 +693,28 @@ public class gestor extends javax.swing.JFrame {
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(b_grabarvehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addGap(7, 7, 7)
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(b_grabarvehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 38, Short.MAX_VALUE)))
                 .addGap(45, 45, 45))
         );
 
         jTabbedPane2.addTab("VEHICULO", jPanel3);
-
-        b_grabarpvida.setText("CONTRATAR");
-        b_grabarpvida.setPreferredSize(new java.awt.Dimension(199, 66));
-        b_grabarpvida.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b_grabarpvidaActionPerformed(evt);
-            }
-        });
 
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder("Coberturas"));
 
@@ -827,6 +882,42 @@ public class gestor extends javax.swing.JFrame {
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
+        b_grabarpvida.setText("CONTRATAR");
+        b_grabarpvida.setPreferredSize(new java.awt.Dimension(199, 66));
+        b_grabarpvida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_grabarpvidaActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("LIMPIAR FORMULARIO");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(b_grabarpvida, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                .addContainerGap(106, Short.MAX_VALUE)
+                .addComponent(b_grabarpvida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addGap(27, 27, 27))
+        );
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -836,22 +927,23 @@ public class gestor extends javax.swing.JFrame {
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(b_grabarpvida, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(82, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(b_grabarpvida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("VIDA", jPanel4);
@@ -909,7 +1001,8 @@ public class gestor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_grabarpvidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_grabarpvidaActionPerformed
-    //lineas que se repiten en cada boton contratar
+      this.validamail();
+    if (paso == 1){
     archivo archi = new archivo();
     archi.crearArchivo();
     
@@ -979,7 +1072,11 @@ public class gestor extends javax.swing.JFrame {
     Persona Persona = new Persona(f1tipodeseguro, f1fecha, f1cuil, f1nombre, f1telefono, f1email,v22,v23, v24,v25,v26,v27,v28,v29,v30,v31,v32,v33,v34);
     archi.escribirArchivo(Persona);
     
-    
+    this.limpiacliente();
+    this.limpiatutto3();
+     } else {
+        this.input_email.setText(" ");
+    }
     }//GEN-LAST:event_b_grabarpvidaActionPerformed
 
     private void input_cuilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_cuilActionPerformed
@@ -1207,6 +1304,7 @@ public class gestor extends javax.swing.JFrame {
     Persona Persona = new Persona(f1tipodeseguro, f1fecha, f1cuil, f1nombre, f1telefono, f1email,v1,v4, v2,v5,v3,v6,v7,v8,v9,v10,v11);
     archi.escribirArchivo(Persona);
     
+    this.limpiacliente();
     this.limpiatutto1();
     } else {
         this.input_email.setText(" ");
@@ -1214,7 +1312,9 @@ public class gestor extends javax.swing.JFrame {
     }//GEN-LAST:event_b_grabarhogarActionPerformed
 
     private void b_grabarvehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_grabarvehiculoActionPerformed
-     //lineas que se repiten en cada boton contratar
+     this.validamail();
+    if (paso == 1){
+
     archivo archi = new archivo();
     archi.crearArchivo();
     
@@ -1266,6 +1366,12 @@ public class gestor extends javax.swing.JFrame {
     //creamos mensajero 
     Persona persona = new Persona(f1tipodeseguro, f1fecha, f1cuil, f1nombre, f1telefono, f1email,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21);
     archi.escribirArchivo(persona);
+    
+    this.limpiacliente();
+    this.limpiatutto2();
+    } else {
+        this.input_email.setText(" ");
+    }
     
     }//GEN-LAST:event_b_grabarvehiculoActionPerformed
 
@@ -1357,12 +1463,33 @@ public class gestor extends javax.swing.JFrame {
     private void input_emailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_emailKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_input_emailKeyTyped
+
+    private void b_limpiatutto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_limpiatutto1ActionPerformed
+    this.limpiatutto1();
+    this.limpiacliente();
+    }//GEN-LAST:event_b_limpiatutto1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     this.limpiacliente();
+     this.limpiatutto2();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+     this.limpiacliente();
+     this.limpiatutto3();
+    }//GEN-LAST:event_jButton2ActionPerformed
     
     
     
     
     //seccion de metodos de los formularios!!!!!!!!!!!!!!***************************************
     
+    public void limpiacliente(){
+    this.input_nombre.setText("");
+    this.input_cuil.setText("");
+    this.input_telefono.setText("");
+    this.input_email.setText(""); 
+    }
     
     public void limpiatutto1(){
     this.S1_chekIncendio.setSelected(false);
@@ -1379,6 +1506,35 @@ public class gestor extends javax.swing.JFrame {
     this.S1_chekcocina.setSelected(false);
     this.S1_cheknotebook.setSelected(false);       
     this.s1_inputnotebook.setText("");
+    }
+    
+    public void limpiatutto2(){
+    this.s2_inputDominio.setText("");
+    this.s2_combomarcas.setSelectedIndex(0);
+    this.s2_combomodelos.setSelectedIndex(0);
+    this.s2_comboAño.setSelectedIndex(0);
+    this.s2_combofranquicias.setSelectedIndex(0);
+    this.s2_chekTercerocompleto.setSelected(false);
+    this.s2_chekresponsabilidadcivil.setSelected(false);
+    this.s2_triesgosinfranquicia.setSelected(false);
+    this.s2_triesgoconfranq.setSelected(false);
+    this.s2_checkgranizo.setSelected(false);
+    }
+    
+    public void limpiatutto3(){
+    this.s3_checkMuerte.setSelected(false);
+    this.s3_chekMuerteaccidental.setSelected(false);
+    this.s3_diasinternacion.setSelected(false);
+    this.s3_comboDiasinternacion.setSelectedIndex(0);
+    this.s3_paralisis.setSelected(false);
+    this.s3_inputbeneficiario1.setText("");
+    this.s3_combobeneficiarios1.setSelectedIndex(0);
+    this.s3_inputbeneficiario2.setText("");
+    this.s3_combobeneficiarios2.setSelectedIndex(0);
+    this.s3_inputbeneficiario3.setText("");
+    this.s3_combobeneficiarios3.setSelectedIndex(0);
+    this.s3_inputbeneficiario4.setText("");
+    this.s3_restobeneficiario.setText("");    
     }
     //aca creamos las opciones que usaremos de acuerdo a la diferencia
     private String [] porcentajesr0 = {"10","20","30","40","50","60","70","80","90"};
@@ -1543,12 +1699,15 @@ public class gestor extends javax.swing.JFrame {
     private javax.swing.JButton b_grabarhogar;
     private javax.swing.JButton b_grabarpvida;
     private javax.swing.JButton b_grabarvehiculo;
+    private javax.swing.JButton b_limpiatutto1;
     private javax.swing.JButton b_salir;
     private javax.swing.JButton b_vercontrataciones;
     private javax.swing.JTextField input_cuil;
     private javax.swing.JTextField input_email;
     private javax.swing.JTextField input_nombre;
     private javax.swing.JTextField input_telefono;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -1563,6 +1722,9 @@ public class gestor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
