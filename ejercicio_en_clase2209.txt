@@ -1,0 +1,37 @@
+ CREATE TABLE IF NOT EXISTS `alumnos`(`id`int(2),`dni`int(8),
+                                     `nombre`varchar(20),
+                                     `apellido`varchar(20),
+                                     `telefono`varchar(11),
+                                     PRIMARY KEY (`id`));
+
+INSERT INTO `alumnos`(`id`,`dni`,`nombre`,`apellido`,`telefono`) VALUES ('1','28910162','Juan','Falabrino','15466565656'),
+('2','28910162','Ricardo','Gutierrez','11457853269'),
+('3','28925662','Pedro','Cantero', '11527898745'),
+('4','12453457','Ivan','Garcia',   '11656547829'),
+('5','58254796','Romina','Pereyra','38156565656'),
+('6','10457895','Maria','Rivarola','28056565656'),
+('7','28910162','Juan','Castañera','35266565656'),
+('8','28910168','Luis','Rodriguez','11457853269'),
+('9','28925663','Raul','Lopez', '11527898745'),
+('10','12453457','Laura','Araoz',  '11656547829');
+
+
+CREATE TABLE IF NOT EXISTS `notas`(`id_nota`int(2),`id_alumno`int(2),
+                                     `nota`varchar(20),
+                                     PRIMARY KEY (`id_nota`));
+
+INSERT INTO `notas`(`id_nota`,`id_alumno`,`nota`) VALUES 
+('1','10','Reprobado'),
+('2','2','Excelente'),
+('3','1','Muy bien'),
+('4','4','Reprobado'),
+('5','5','Aprobado'),
+('6','3','Reprobado'),
+('7','6','Ausente'),
+('8','9','Excelente'),
+('9','7','Muy bien'),
+('10','8','Ausente');
+
+
+CONSULTAS SELECT COMBINADAS
+SELECT nombre, nota FROM alumnos, notas WHERE id = id_alumno;
