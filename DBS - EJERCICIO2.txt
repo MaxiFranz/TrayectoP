@@ -1,0 +1,1 @@
+SELECT provincias.nombre from provincias LEFT JOIN clientes ON provincias.codigo = clientes.codigoProvincia GROUP  BY clientes.codigoProvincia
