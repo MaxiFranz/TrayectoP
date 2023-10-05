@@ -1,0 +1,35 @@
+CREATE table clientes ( codigo int unsigned auto_increment, nombre varchar(30) not null, domicilio varchar(30), ciudad varchar(20), codigoProvincia tinyint unsigned, telefono varchar(11), primary key(codigo) );
+
+CREATE table provincias( codigo tinyint unsigned auto_increment, nombre varchar(20), primary key (codigo) );
+
+INSERT into clientes (codigo, nombre,domicilio,ciudad,codigoProvincia,telefono)
+values ('1','Lopez Marcos', 'Colon 111', 'Córdoba',1,'0');
+INSERT into clientes (codigo, nombre,domicilio,ciudad,codigoProvincia,telefono)
+values ('2','Perez Ana', 'San Martin 222', 'Cruz del Eje',1,'4578585');
+INSERT into clientes (codigo, nombre,domicilio,ciudad,codigoProvincia,telefono)
+values ('3','Garcia Juan', 'Rivadavia 333', 'Villa Maria',1,'4578445');
+INSERT into clientes (codigo,nombre,domicilio,ciudad,codigoProvincia,telefono)
+values ('4','Perez Luis', 'Sarmiento 444', 'Rosario',2,0);
+INSERT into clientes (codigo, nombre,domicilio,ciudad,codigoProvincia,telefono)
+values ('5','Pereyra Lucas', 'San Martin 555', 'Cruz del Eje',1,'4253685');
+INSERT into clientes (codigo, nombre,domicilio,ciudad,codigoProvincia,telefono)
+values ('6','Gomez Ines', 'San Martin 666', 'Santa Fe',2,'0345252525');
+INSERT into clientes (codigo, nombre,domicilio,ciudad,codigoProvincia,telefono)
+values ('7','Torres Fabiola', 'Alem 777', 'Villa del Rosario',1,'4554455');
+INSERT into clientes (codigo, nombre,domicilio,ciudad,codigoProvincia,telefono)
+values ('8','Lopez Carlos', 'Irigoyen 888', 'Cruz del Eje',1,0);
+INSERT into clientes (codigo, nombre,domicilio,ciudad,codigoProvincia,telefono)
+values ('9','Ramos Betina', 'San Martin 999', 'Cordoba',1,'4223366');
+INSERT into clientes (codigo, nombre,domicilio,ciudad,codigoProvincia,telefono)
+values ('10','Lopez Lucas', 'San Martin 1010', 'Posadas',4,'0457858745');
+
+INSERT into provincias (codigo, nombre) values('1','Cordoba');
+INSERT into provincias (codigo, nombre) values('2','Santa Fe');
+INSERT into provincias (codigo, nombre) values('3','Corrientes');
+INSERT into provincias (codigo, nombre) values('4','Misiones');
+INSERT into provincias (codigo, nombre) values('5','Salta');
+INSERT into provincias (codigo, nombre) values('6','Buenos Aires');
+INSERT into provincias (codigo, nombre) values('7','Neuquen');
+
+Consulta que devuelve provincias donde no hay clientes:
+SELECT provincias.codigo, provincias.nombre from provincias LEFT JOIN clientes ON provincias.codigo = clientes.codigoProvincia WHERE clientes.codigoProvincia is null
