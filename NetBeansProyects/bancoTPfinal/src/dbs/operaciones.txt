@@ -1,0 +1,2 @@
+001,03/10/2023 22:59,11111111111,Moneda Extranjera
+001,04/10/2023 20:55,11111111111,Solicitud de prestamo
