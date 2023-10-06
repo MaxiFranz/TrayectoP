@@ -20,8 +20,14 @@ insert into socios values('95524783','Marcelo Pereyra','Sucre 349');
 insert into socios values('12457836','Marcelo Pereyra','Sucre 349');
 
 insert into inscriptos values ('10125678','natacion','2015','s');
-insert into inscriptos values ('22333444','natacion','2016','n');
+insert into inscriptos values ('23333444','natacion','2016','n');
 insert into inscriptos values ('32504687','natacion','2015','s');
-insert into inscriptos values ('32504687','tenis','2016','s');
 insert into inscriptos values ('95524783','natacion','2016','s');
+insert into inscriptos values ('32504687','tenis','2016','s');
 insert into inscriptos values ('95524783','tenis','2016','n');
+insert into inscriptos values ('25471879','ajedrez','2016','n');
+
+SELECT socios.documento AS documento ,socios.nombre, inscriptos.documento FROM socios LEFT JOIN inscriptos ON socios.documento = inscriptos.documento
+
+SELECT socios.documento AS documento , socios.nombre, inscriptos.documento FROM socios RIGHT JOIN inscriptos ON socios.documento = inscriptos.documento 
+
