@@ -1,0 +1,27 @@
+create table socios(
+documento char(8) not null,
+nombre varchar(30),
+domicilio varchar(30),
+primary key(documento)
+);
+
+create table inscriptos(
+documento char(8) not null,
+deporte varchar(15) not null,
+año year,
+matricula char(1), /*si esta paga ='s' sino 'n'*/
+primary key(documento,deporte,año)
+);
+
+insert into socios values('10125678','Juan Perez','Colon 234');
+insert into socios values('23333444','Maria Lopez','Sarmiento 465');
+insert into socios values('32504687','Antonio Juarez','Caseros 980');
+insert into socios values('95524783','Marcelo Pereyra','Sucre 349');
+insert into socios values('12457836','Marcelo Pereyra','Sucre 349');
+
+insert into inscriptos values ('10125678','natacion','2015','s');
+insert into inscriptos values ('22333444','natacion','2016','n');
+insert into inscriptos values ('32504687','natacion','2015','s');
+insert into inscriptos values ('32504687','tenis','2016','s');
+insert into inscriptos values ('95524783','natacion','2016','s');
+insert into inscriptos values ('95524783','tenis','2016','n');
