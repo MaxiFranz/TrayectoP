@@ -17,7 +17,7 @@ public class prestamos extends javax.swing.JInternalFrame {
 
     String sesion_id;
     String cuit_ingresado;
-    
+    boolean contieneU = false;
     int capital;
     int meses;
     int interes_tasa;
@@ -539,16 +539,23 @@ meses = Integer.parseInt(this.input_tiempo.getText());
         String va2 = this.input_fecha.getText();// v_fecha;
         String va3 = this.input_cuit.getText();//cuit
         String va4 = operacion;
+        String detalle = "Monto a entregar: " + this.input_capital.getText()+ 
+                         " - Cantidad de cuotas: " + this.input_tiempo.getText()+
+                         " - Tasa de Interes: "  + this.input_interes.getText()+
+                         " - Intereses a pagar $: "+ this.input_interesapagar.getText()+
+                         " - Valor cuota $: " + this.input_totadevolver.getText()+
+                         " - Total a devolver $: "+ this.input_valorcuota.getText();
         //hasta aca las lineas para grabar en general todas las operaciones
         
         //comprobamos si esta el archivo, sino, lo crea
         archivo_prestamos.archivo_crear(this);
 
         //aca generamos una variable con todos los valores
-        String linea = (""+va1+","+va2+","+va3+","+va4);
+        String linea = (""+va1+","+va2+","+va3+","+va4+","+detalle);
         
         //grabamos la linea
         archivo_prestamos.archivo_escribir(""+linea);
+        this.setVisible(false);
     }//GEN-LAST:event_b_confirmaygrabaActionPerformed
  
 private void calculatasainteres(){
@@ -575,6 +582,7 @@ private void validacuit(){
         Scanner sc = new Scanner(System.in);
         //inicializamos el numero de linea
         int numeroDeLinea = 1;
+       
         
        try {
            FileReader archivo = new FileReader(".\\src\\dbs\\clientes.txt");
@@ -585,24 +593,31 @@ private void validacuit(){
                 linea = entrada.nextLine();  //se lee una línea
                 //si esta el usuario en la linea que lee...
                 if (linea.contains(cuit_ingresado)) {   
+                        
+                        
                         JOptionPane.showMessageDialog(null, 
                                  "Cliente encontrado", "Atencion!", 
                                  HEIGHT); 
                          
-                         //pasamos dos variables al main
-                         //sesion pdi = new sesion(codigoL, nivelL);
-                         //main  se = new main(pdi);
-                         //se.setVisible(true);
-                        } else {
-                         JOptionPane.showMessageDialog(null, 
-                                 "El cuit ingresado no pertenece\n "
-                                         + "a un cliente del banco", "Atencion!", 
-                                 HEIGHT);
-                        }
+                        contieneU = true; 
+                        } 
+                        
+                       
                     
                     
                 }
+           
                 numeroDeLinea++; //se incrementa el contador de líneas   
+
+               
+                if(!contieneU){
+                JOptionPane.showMessageDialog(null, 
+                                 "El cuit ingresado no pertenece\n "
+                                         + "a un cliente del banco", "Atencion!", 
+                                 HEIGHT);
+                this.input_cuit.setText("");
+                contieneU = false; 
+                 }
        }catch(FileNotFoundException e){
            System.out.println(e);
        

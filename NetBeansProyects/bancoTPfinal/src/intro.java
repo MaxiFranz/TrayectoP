@@ -10,10 +10,7 @@ ImageIcon logo = new ImageIcon("/imagenes/logospoleto.jpg");
     public intro() {
         initComponents();
          this.setLocationRelativeTo(null);
-        
-         
-
-        
+           
     }
 
 
@@ -24,7 +21,7 @@ ImageIcon logo = new ImageIcon("/imagenes/logospoleto.jpg");
         jLabel1 = new javax.swing.JLabel();
         b_cerrar = new javax.swing.JButton();
         b_gotologin = new javax.swing.JButton();
-        b_informe = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,23 +41,21 @@ ImageIcon logo = new ImageIcon("/imagenes/logospoleto.jpg");
             }
         });
 
-        b_informe.setText("Info");
+        jLabel2.setText("V 1.0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(b_gotologin, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(b_informe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(b_gotologin, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(b_cerrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
                 .addContainerGap())
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -70,8 +65,8 @@ ImageIcon logo = new ImageIcon("/imagenes/logospoleto.jpg");
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(b_gotologin)
                     .addComponent(b_cerrar)
-                    .addComponent(b_informe))
-                .addGap(6, 6, 6))
+                    .addComponent(jLabel2))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         pack();
@@ -102,7 +97,7 @@ ImageIcon logo = new ImageIcon("/imagenes/logospoleto.jpg");
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_cerrar;
     private javax.swing.JButton b_gotologin;
-    private javax.swing.JButton b_informe;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

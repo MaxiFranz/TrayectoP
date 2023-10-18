@@ -1,1 +1,3 @@
 001,02/10/2023 23:12,11111111111,Hombre,Roberto,Goyeneche,121076,Beruti 1024,Caba,CABA,Soltero,pepe@pepe.com,0
+001,11/10/2023 18:50,11123545678,Hombre,Ricardo,Perez,140579,Los Patos 3080,CABA,CABA,Soltero,ricardo@gmail.com,2
+001,16/10/2023 07:53,30254715337,Hombre,Maximo,Franzoni,121019,Los Patos 3081,CABA,CABA,Soltero,pepe@pepe.com.ar,0

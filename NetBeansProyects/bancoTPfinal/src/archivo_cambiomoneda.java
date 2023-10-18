@@ -56,7 +56,7 @@ public class archivo_cambiomoneda {
             wr.write(""+texto+"\n");
             wr.close();
             bw.close();
-            JOptionPane.showMessageDialog(null, "El pedido se grabo correctamente");
+            JOptionPane.showMessageDialog(null, "La operacion se grabo correctamente");
         } catch (IOException e){
             System.out.println(e);
         }

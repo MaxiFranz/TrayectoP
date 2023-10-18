@@ -30,8 +30,7 @@ public class main extends javax.swing.JFrame {
         }else {
             b_abrelistadousuarios.setEnabled(false); 
         }
-        
-        
+    
     }
 
 

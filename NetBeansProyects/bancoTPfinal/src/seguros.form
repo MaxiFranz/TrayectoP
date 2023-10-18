@@ -69,20 +69,22 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="n_op" min="-2" pref="43" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="input_fecha" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="input_operador" min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -95,7 +97,10 @@
                       <Component id="input_operador" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="input_fecha" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="input_fecha" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="n_op" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -113,6 +118,11 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="input_fecha">
+        </Component>
+        <Component class="javax.swing.JTextField" name="n_op">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -283,24 +293,19 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="s1_inputbeneficario4" pref="88" max="32767" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="s1_combobenef4" min="-2" max="-2" attributes="0"/>
+                              <Component id="s3_inputbeneficiario4" pref="88" max="32767" attributes="0"/>
+                              <Component id="s3_inputbeneficiario3" alignment="1" max="32767" attributes="0"/>
+                              <Component id="s3_inputbeneficiario2" alignment="1" max="32767" attributes="0"/>
+                              <Component id="s3_inputbeneficario1" alignment="1" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="12" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="s3_combobeneficiarios3" alignment="1" min="-2" pref="64" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="s1_combobenef1" alignment="1" pref="66" max="32767" attributes="0"/>
+                                  <Component id="s3_combobeneficiarios2" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="s1_inputbeneficario3" max="32767" attributes="0"/>
-                                      <Component id="s1_inputbeneficario2" max="32767" attributes="0"/>
-                                      <Component id="s1_inputbeneficario1" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="s1_combobenef1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="s1_combobenef2" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="s1_combobenef3" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="s3_restobeneficiario" alignment="1" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
@@ -311,23 +316,23 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="s1_inputbeneficario1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="s3_inputbeneficario1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="s1_combobenef1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="s1_inputbeneficario2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="s1_combobenef2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="s3_inputbeneficiario2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="s3_combobeneficiarios2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="s1_inputbeneficario3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="s1_combobenef3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="s3_inputbeneficiario3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="s3_combobeneficiarios3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="s1_inputbeneficario4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="s1_combobenef4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="s3_inputbeneficiario4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="s3_restobeneficiario" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -335,13 +340,22 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="s1_inputbeneficario1">
+                <Component class="javax.swing.JTextField" name="s3_inputbeneficario1">
                 </Component>
-                <Component class="javax.swing.JTextField" name="s1_inputbeneficario2">
+                <Component class="javax.swing.JTextField" name="s3_inputbeneficiario2">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="s1_inputbeneficario3">
+                <Component class="javax.swing.JTextField" name="s3_inputbeneficiario3">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="s1_inputbeneficario4">
+                <Component class="javax.swing.JTextField" name="s3_inputbeneficiario4">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="s1_combobenef1">
                   <Properties>
@@ -360,39 +374,48 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="s1_combobenef1ActionPerformed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="s1_combobenef2">
+                <Component class="javax.swing.JComboBox" name="s3_combobeneficiarios2">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="0"/>
                     </Property>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="s3_combobeneficiarios2ActionPerformed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="s1_combobenef3">
+                <Component class="javax.swing.JComboBox" name="s3_combobeneficiarios3">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="0"/>
                     </Property>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="s3_combobeneficiarios3ActionPerformed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="s1_combobenef4">
+                <Component class="javax.swing.JTextField" name="s3_restobeneficiario">
                   <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="s3_restobeneficiarioActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -446,11 +469,17 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Muerte"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="s1_chek_muerteActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="s1_chek_muerteacc">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Muerte accidental"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="s1_chek_muerteaccActionPerformed"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JPanel" name="jPanel13">
                   <Properties>
@@ -466,13 +495,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                                      <Component id="s1_combo_diasinternacion" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="s1_chek_diasinternacion" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                      <Component id="s3_diasinternacion" min="-2" pref="63" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
@@ -485,7 +514,7 @@
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               <Component id="s1_chek_diasinternacion" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="s1_combo_diasinternacion" min="-2" max="-2" attributes="0"/>
+                              <Component id="s3_diasinternacion" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="16" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -496,17 +525,21 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Dias de internacion"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="s1_chek_diasinternacionStateChanged"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="s1_chek_diasinternacionActionPerformed"/>
+                      </Events>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="s1_combo_diasinternacion">
+                    <Component class="javax.swing.JComboBox" name="s3_diasinternacion">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="4">
-                            <StringItem index="0" value=""/>
-                            <StringItem index="1" value="30"/>
-                            <StringItem index="2" value="60"/>
-                            <StringItem index="3" value="90"/>
+                          <StringArray count="3">
+                            <StringItem index="0" value="30"/>
+                            <StringItem index="1" value="60"/>
+                            <StringItem index="2" value="90"/>
                           </StringArray>
                         </Property>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -518,6 +551,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Paralisis parcial o total"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="s1_chek_paralisisActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -525,10 +561,14 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Reset Formulario"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="b_svida">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Contratar"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_svidaActionPerformed"/>
@@ -560,7 +600,7 @@
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="b_shogar" min="-2" pref="120" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton3" min="-2" pref="132" max="-2" attributes="0"/>
+                              <Component id="b_resetHogar" min="-2" pref="132" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -577,7 +617,7 @@
                       </Group>
                       <EmptySpace pref="15" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="b_resetHogar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="b_shogar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -653,16 +693,26 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Incendio"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="S1_chekIncendioStateChanged"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="S1_chekIncendioActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="s1_chekRobo">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Robo"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="s1_chekRoboStateChanged"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="s1_chekInundacion">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Inundacion"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="s1_chekInundacionStateChanged"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="s1_comboincendio">
                   <Properties>
@@ -672,6 +722,7 @@
                         <StringItem index="1" value="Total"/>
                       </StringArray>
                     </Property>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -685,6 +736,7 @@
                         <StringItem index="1" value="Total"/>
                       </StringArray>
                     </Property>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -698,6 +750,7 @@
                         <StringItem index="1" value="Total"/>
                       </StringArray>
                     </Property>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -785,6 +838,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Notebook"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="S1_cheknotebookStateChanged"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="S1_chekconsola">
                   <Properties>
@@ -795,6 +851,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Televisor"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="S1_chektelevisorStateChanged"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="s1_inputnotebook">
                   <Properties>
@@ -808,14 +867,18 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="b_resetHogar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Reset Formulario"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_resetHogarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="b_shogar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Contratar"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_shogarActionPerformed"/>

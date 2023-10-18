@@ -712,6 +712,7 @@ public class altacliente extends javax.swing.JInternalFrame {
         
         //grabamos la linea
         archivo_altacliente.archivo_escribir(""+linea); 
+        this.setVisible(false);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_cerrar;
