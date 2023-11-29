@@ -69,6 +69,7 @@ public class main extends javax.swing.JFrame {
         b_cambiomoneda = new javax.swing.JMenuItem();
         b_prestamos = new javax.swing.JMenuItem();
         b_seguros = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         b_veroperaciones = new javax.swing.JMenuItem();
         bt_verporcliente = new javax.swing.JMenuItem();
@@ -208,6 +209,14 @@ public class main extends javax.swing.JFrame {
             }
         });
         jMenu7.add(b_seguros);
+
+        jMenuItem2.setText("Modificar / Borrar Servicio");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem2);
 
         jMenuBar1.add(jMenu7);
 
@@ -376,6 +385,17 @@ public class main extends javax.swing.JFrame {
         veroperxcliente.setVisible(true);  
     }//GEN-LAST:event_bt_verporclienteActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    veroperacion veroperacion = new veroperacion();
+    escritorio.add(veroperacion);
+    
+    Dimension desktopSize = escritorio.getSize();
+        Dimension FrameSize = veroperacion.getSize();
+        veroperacion.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+        veroperacion.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -434,6 +454,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 
    
