@@ -25,10 +25,21 @@ public class main extends javax.swing.JFrame {
          escritorio = new fondodesktop();
         this.setContentPane(escritorio);
         this.setTitle("Bienvenidos!!!");
-        if (nivel == 1){
+        if (nivel == 1){//gerente
             b_abrelistadousuarios.setEnabled(true);
-        }else {
-            b_abrelistadousuarios.setEnabled(false); 
+            crea_usuarios.setEnabled(true);
+            jMenu2.setEnabled(true);
+            jMenu7.setEnabled(true);
+        }else if (nivel == 2) {//administrativo
+            b_abrelistadousuarios.setEnabled(false);
+            crea_usuarios.setEnabled(false);
+            jMenu2.setEnabled(true);
+            jMenu7.setEnabled(true);
+        } else {//cajero
+            b_abrelistadousuarios.setEnabled(true);
+            crea_usuarios.setEnabled(false);
+            jMenu2.setEnabled(false);
+            jMenu7.setEnabled(false);  
         }
     
     }
@@ -38,21 +49,37 @@ public class main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
         fondodesktop = new javax.swing.JDesktopPane();
         in_verusuarios = new javax.swing.JInternalFrame();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         b_abrelistadousuarios = new javax.swing.JMenuItem();
+        crea_usuarios = new javax.swing.JMenuItem();
         b_cerrar = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         b_altacliente = new javax.swing.JMenuItem();
+        b_modificarcliente = new javax.swing.JMenuItem();
+        b_verclientes = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
         b_cambiomoneda = new javax.swing.JMenuItem();
         b_prestamos = new javax.swing.JMenuItem();
         b_seguros = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        b_verclientes = new javax.swing.JMenuItem();
         b_veroperaciones = new javax.swing.JMenuItem();
+        bt_verporcliente = new javax.swing.JMenuItem();
+
+        jMenu4.setText("File");
+        jMenuBar2.add(jMenu4);
+
+        jMenu5.setText("Edit");
+        jMenuBar2.add(jMenu5);
+
+        jMenu6.setText("jMenu6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,7 +115,7 @@ public class main extends javax.swing.JFrame {
                 .addContainerGap(270, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("Menu");
+        jMenu1.setText("Usuarios");
 
         jMenuItem1.setText("Ver sesion en curso");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +134,15 @@ public class main extends javax.swing.JFrame {
         });
         jMenu1.add(b_abrelistadousuarios);
 
+        crea_usuarios.setText("Crear Usuarios");
+        crea_usuarios.setEnabled(false);
+        crea_usuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crea_usuariosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(crea_usuarios);
+
         b_cerrar.setText("Cerrar");
         b_cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,6 +154,7 @@ public class main extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Clientes");
+        jMenu2.setEnabled(false);
 
         b_altacliente.setText("Alta Cliente");
         b_altacliente.addActionListener(new java.awt.event.ActionListener() {
@@ -127,13 +164,34 @@ public class main extends javax.swing.JFrame {
         });
         jMenu2.add(b_altacliente);
 
+        b_modificarcliente.setText("Modificar Cliente");
+        b_modificarcliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_modificarclienteActionPerformed(evt);
+            }
+        });
+        jMenu2.add(b_modificarcliente);
+
+        b_verclientes.setText("Listado Clientes");
+        b_verclientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_verclientesActionPerformed(evt);
+            }
+        });
+        jMenu2.add(b_verclientes);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu7.setText("Servicios");
+        jMenu7.setEnabled(false);
+
         b_cambiomoneda.setText("Cambio Moneda");
         b_cambiomoneda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_cambiomonedaActionPerformed(evt);
             }
         });
-        jMenu2.add(b_cambiomoneda);
+        jMenu7.add(b_cambiomoneda);
 
         b_prestamos.setText("Prestamos");
         b_prestamos.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +199,7 @@ public class main extends javax.swing.JFrame {
                 b_prestamosActionPerformed(evt);
             }
         });
-        jMenu2.add(b_prestamos);
+        jMenu7.add(b_prestamos);
 
         b_seguros.setText("Seguros");
         b_seguros.addActionListener(new java.awt.event.ActionListener() {
@@ -149,27 +207,27 @@ public class main extends javax.swing.JFrame {
                 b_segurosActionPerformed(evt);
             }
         });
-        jMenu2.add(b_seguros);
+        jMenu7.add(b_seguros);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jMenu7);
 
         jMenu3.setText("Informes");
 
-        b_verclientes.setText("Clientes");
-        b_verclientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b_verclientesActionPerformed(evt);
-            }
-        });
-        jMenu3.add(b_verclientes);
-
-        b_veroperaciones.setText("Operaciones");
+        b_veroperaciones.setText("Todas las operaciones");
         b_veroperaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_veroperacionesActionPerformed(evt);
             }
         });
         jMenu3.add(b_veroperaciones);
+
+        bt_verporcliente.setText("Consulta por cliente");
+        bt_verporcliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_verporclienteActionPerformed(evt);
+            }
+        });
+        jMenu3.add(bt_verporcliente);
 
         jMenuBar1.add(jMenu3);
 
@@ -206,7 +264,8 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_b_abrelistadousuariosActionPerformed
 
     private void b_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cerrarActionPerformed
-   System.exit(0);   
+
+        System.exit(0);   
     }//GEN-LAST:event_b_cerrarActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -282,6 +341,41 @@ public class main extends javax.swing.JFrame {
         v6.setVisible(true);  
     }//GEN-LAST:event_b_segurosActionPerformed
 
+    private void crea_usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crea_usuariosActionPerformed
+       crea_usuarios crea_usuarios = new crea_usuarios();
+     escritorio.add(crea_usuarios);
+     //queremos que se abra en el centro...
+        //toma las dimensiones del escritorio
+        Dimension dimensionEsc = escritorio.getSize();
+        //toma las dimensiones de la ventana que va a abrir
+        Dimension dimensioncrea_usuarios = crea_usuarios.getSize();
+        crea_usuarios.setLocation((dimensionEsc.width-dimensioncrea_usuarios.width)/2,(dimensionEsc.height-dimensioncrea_usuarios.height)/2);
+        crea_usuarios.show();
+        
+    }//GEN-LAST:event_crea_usuariosActionPerformed
+
+    private void b_modificarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_modificarclienteActionPerformed
+        modificar_cliente modificar_cliente = new modificar_cliente();
+        escritorio.add(modificar_cliente);
+        //queremos que se abra en el centro...
+        //toma las dimensiones del escritorio
+        Dimension dimensionEsc = escritorio.getSize();
+        //toma las dimensiones de la ventana que va a abrir
+        Dimension dimensioncrea_usuarios = modificar_cliente.getSize();
+        modificar_cliente.setLocation((dimensionEsc.width-dimensioncrea_usuarios.width)/2,(dimensionEsc.height-dimensioncrea_usuarios.height)/2);
+        modificar_cliente.show();    // TODO add your handling code here:
+    }//GEN-LAST:event_b_modificarclienteActionPerformed
+
+    private void bt_verporclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_verporclienteActionPerformed
+      veroperxcliente  veroperxcliente = new veroperxcliente();
+        escritorio.add(veroperxcliente);
+        
+        Dimension desktopSize = escritorio.getSize();
+        Dimension FrameSize = veroperxcliente.getSize();
+        veroperxcliente.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+        veroperxcliente.setVisible(true);  
+    }//GEN-LAST:event_bt_verporclienteActionPerformed
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -321,16 +415,24 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JMenuItem b_altacliente;
     private javax.swing.JMenuItem b_cambiomoneda;
     private javax.swing.JMenuItem b_cerrar;
+    private javax.swing.JMenuItem b_modificarcliente;
     private javax.swing.JMenuItem b_prestamos;
     private javax.swing.JMenuItem b_seguros;
     private javax.swing.JMenuItem b_verclientes;
     private javax.swing.JMenuItem b_veroperaciones;
+    private javax.swing.JMenuItem bt_verporcliente;
+    private javax.swing.JMenuItem crea_usuarios;
     public static javax.swing.JDesktopPane fondodesktop;
     private javax.swing.JInternalFrame in_verusuarios;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 

@@ -1,10 +1,15 @@
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 import static java.awt.image.ImageObserver.HEIGHT;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -15,10 +20,16 @@ import javax.swing.JOptionPane;
 
 public class cambiomoneda extends javax.swing.JInternalFrame {
     
-    String operacion = "Moneda Extranjera";
+    String operacion = "1";
     String sesion_id;
     String cuit_ingresado;
     
+    String va1;
+    String va2;
+    String va3;
+    String va4;
+    String detalle;
+        
     int combo_monedaS = 0;
     String monedaCambio = "";
     
@@ -67,7 +78,6 @@ public class cambiomoneda extends javax.swing.JInternalFrame {
 
         setTitle("Cambio Moneda");
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar Cliente"));
 
         b_cerrar.setText("Cancelar");
@@ -137,7 +147,6 @@ public class cambiomoneda extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(153, 255, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Operador"));
 
         jLabel2.setText("Id Operador");
@@ -376,12 +385,12 @@ public class cambiomoneda extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_input_operadorActionPerformed
 
     private void b_confirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_confirmaActionPerformed
-        String va1 = this.input_operador.getText();// v_id_operador;
-        String va2 = this.input_fecha.getText();// v_fecha;
-        String va3 = this.input_cuit.getText();//cuit
-        String va4 = operacion;
+        va1 = this.input_operador.getText();// v_id_operador;
+        va2 = this.input_fecha.getText();// v_fecha;
+        va3 = this.input_cuit.getText();//cuit
+        va4 = operacion;
         //hasta aca las lineas para grabar en general todas las operaciones
-        String detalle = "El cliente entrega: " + this.input_pesos.getText()+ 
+        detalle = "El cliente entrega: " + this.input_pesos.getText()+ 
                          " - Moneda a entregar: " + this.combo_monedas.getSelectedItem()+
                          " - Cotizacion: "  + this.input_cotizacion.getText()+
                          " - Total a entregar: "+ this.input_loquedamos.getText();
@@ -394,7 +403,37 @@ public class cambiomoneda extends javax.swing.JInternalFrame {
         
         //grabamos la linea
         archivo_cambiomoneda.archivo_escribir(""+linea);
+        
+        //********************************************************************
+        //grabamos la linea en la base
+        try{
+           // conectar a la base de datos
+           Connection conexion = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/banco", "root", "");
+           if (conexion!=null){
+              JOptionPane.showMessageDialog(null, "Conectado a DB");   
+            }
+          
+        // Enviando la sentencia sql
+           PreparedStatement sq = (PreparedStatement) conexion.prepareStatement("insert into operaciones values(?,?,?,?,?,?)");
+           //Especifico los campos
+           sq.setString(1, "0");
+           sq.setString(2, va1);
+           sq.setString(3, va2);
+           sq.setString(4, va3);
+           sq.setString(5, va4);
+           sq.setString(6, detalle);
+           //Todo lo pedido que lo ejecute y cierre la base
+           sq.executeUpdate();
+           
+       }catch(SQLException e){
+       
+       }
+        
+        //********************************************************************
         this.setVisible(false);
+        
+        
+        
     }//GEN-LAST:event_b_confirmaActionPerformed
 
     private void input_pesosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_pesosKeyTyped
@@ -478,48 +517,31 @@ public class cambiomoneda extends javax.swing.JInternalFrame {
         Scanner sc = new Scanner(System.in);
         //inicializamos el numero de linea
         int numeroDeLinea = 1;
-       
+        buscaensql();
         
-       try {
-           FileReader archivo = new FileReader(".\\src\\dbs\\clientes.txt");
-           BufferedReader leer = new BufferedReader(archivo);
-           entrada = new Scanner(archivo);
-           
-           while (entrada.hasNext()) { //mientras no se llegue al final del fichero
-                linea = entrada.nextLine();  //se lee una línea
-                //si esta el usuario en la linea que lee...
-                if (linea.contains(cuit_ingresado)) {   
-                        
-                        
-                        JOptionPane.showMessageDialog(null, 
-                                 "Cliente encontrado", "Atencion!", 
-                                 HEIGHT); 
-                         
-                        contieneU = true; 
-                        } 
-                        
-                       
-                    
-                    
-                }
-           
-                numeroDeLinea++; //se incrementa el contador de líneas   
-
-               
-                if(!contieneU){
-                JOptionPane.showMessageDialog(null, 
-                                 "El cuit ingresado no pertenece\n "
-                                         + "a un cliente del banco", "Atencion!", 
-                                 HEIGHT);
-                this.input_cuit.setText("");
-                contieneU = false; 
-                 }
-       }catch(FileNotFoundException e){
-           System.out.println(e);
-       
-       }
     } 
 
+    private void buscaensql(){
+   
+        try{
+         // conectar a la base de datos
+           java.sql.Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/banco", "root", "");
+            
+            // Enviando la sentencia sql
+           java.sql.PreparedStatement sq = conexion.prepareStatement("SELECT cuil FROM clientes WHERE cuil = ?");
+           //Especifico los campos 
+           sq.setString(1, input_cuit.getText().trim());
+           ResultSet rs = sq.executeQuery();
+           
+           if (rs.next()){
+                JOptionPane.showMessageDialog(null, "El cuit ingresado es cliente");
+           }else {
+               JOptionPane.showMessageDialog(null, "El cuit ingresado no es cliente");
+           }
+         }catch(SQLException e){
+       
+       }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_buscarcliente;
     private javax.swing.JButton b_calcularrr;

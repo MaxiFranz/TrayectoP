@@ -1,8 +1,13 @@
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 import static java.awt.image.ImageObserver.HEIGHT;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -24,7 +29,13 @@ public class prestamos extends javax.swing.JInternalFrame {
     int interes_pesos;
     int adevolver;
     
-    String operacion = "Solicitud de prestamo";
+    String va1;
+    String va2;
+    String va3;
+    String va4;
+    String detalle;
+    
+    String operacion = "2";
     
     public prestamos(sesionainternal sesionainternal) {
         initComponents();
@@ -73,7 +84,6 @@ public class prestamos extends javax.swing.JInternalFrame {
 
         setTitle("Prestamos");
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Operador"));
 
         jLabel1.setText("Id Operador");
@@ -113,7 +123,6 @@ public class prestamos extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar Cliente"));
 
         jLabel2.setText("Ingrese Cuit");
@@ -535,16 +544,16 @@ meses = Integer.parseInt(this.input_tiempo.getText());
     }//GEN-LAST:event_b_validaActionPerformed
 
     private void b_confirmaygrabaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_confirmaygrabaActionPerformed
-        String va1 = this.input_operador.getText();// v_id_operador;
-        String va2 = this.input_fecha.getText();// v_fecha;
-        String va3 = this.input_cuit.getText();//cuit
-        String va4 = operacion;
-        String detalle = "Monto a entregar: " + this.input_capital.getText()+ 
+        va1 = this.input_operador.getText();// v_id_operador;
+        va2 = this.input_fecha.getText();// v_fecha;
+        va3 = this.input_cuit.getText();//cuit
+        va4 = operacion;
+        detalle = "Monto a entregar: " + this.input_capital.getText()+ 
                          " - Cantidad de cuotas: " + this.input_tiempo.getText()+
                          " - Tasa de Interes: "  + this.input_interes.getText()+
                          " - Intereses a pagar $: "+ this.input_interesapagar.getText()+
-                         " - Valor cuota $: " + this.input_totadevolver.getText()+
-                         " - Total a devolver $: "+ this.input_valorcuota.getText();
+                         " - Total a devolver $: " + this.input_totadevolver.getText()+
+                         " - Valor cuota $: "+ this.input_valorcuota.getText();
         //hasta aca las lineas para grabar en general todas las operaciones
         
         //comprobamos si esta el archivo, sino, lo crea
@@ -555,6 +564,33 @@ meses = Integer.parseInt(this.input_tiempo.getText());
         
         //grabamos la linea
         archivo_prestamos.archivo_escribir(""+linea);
+        
+        //********************************************************************
+        //grabamos la linea en la base
+        try{
+           // conectar a la base de datos
+           Connection conexion = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/banco", "root", "");
+           if (conexion!=null){
+              JOptionPane.showMessageDialog(null, "Conectado a DB");   
+            }
+          
+        // Enviando la sentencia sql
+           PreparedStatement sq = (PreparedStatement) conexion.prepareStatement("insert into operaciones values(?,?,?,?,?,?)");
+           //Especifico los campos
+           sq.setString(1, "0");
+           sq.setString(2, va1);
+           sq.setString(3, va2);
+           sq.setString(4, va3);
+           sq.setString(5, va4);
+           sq.setString(6, detalle);
+           //Todo lo pedido que lo ejecute y cierre la base
+           sq.executeUpdate();
+           
+       }catch(SQLException e){
+       
+       }
+        
+        //********************************************************************
         this.setVisible(false);
     }//GEN-LAST:event_b_confirmaygrabaActionPerformed
  
@@ -582,48 +618,30 @@ private void validacuit(){
         Scanner sc = new Scanner(System.in);
         //inicializamos el numero de linea
         int numeroDeLinea = 1;
-       
-        
-       try {
-           FileReader archivo = new FileReader(".\\src\\dbs\\clientes.txt");
-           BufferedReader leer = new BufferedReader(archivo);
-           entrada = new Scanner(archivo);
-           
-           while (entrada.hasNext()) { //mientras no se llegue al final del fichero
-                linea = entrada.nextLine();  //se lee una línea
-                //si esta el usuario en la linea que lee...
-                if (linea.contains(cuit_ingresado)) {   
-                        
-                        
-                        JOptionPane.showMessageDialog(null, 
-                                 "Cliente encontrado", "Atencion!", 
-                                 HEIGHT); 
-                         
-                        contieneU = true; 
-                        } 
-                        
-                       
-                    
-                    
-                }
-           
-                numeroDeLinea++; //se incrementa el contador de líneas   
-
-               
-                if(!contieneU){
-                JOptionPane.showMessageDialog(null, 
-                                 "El cuit ingresado no pertenece\n "
-                                         + "a un cliente del banco", "Atencion!", 
-                                 HEIGHT);
-                this.input_cuit.setText("");
-                contieneU = false; 
-                 }
-       }catch(FileNotFoundException e){
-           System.out.println(e);
-       
-       }
+        buscaensql(); 
     } 
 
+    private void buscaensql(){
+   
+        try{
+         // conectar a la base de datos
+           java.sql.Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/banco", "root", "");
+            
+            // Enviando la sentencia sql
+           java.sql.PreparedStatement sq = conexion.prepareStatement("SELECT cuil FROM clientes WHERE cuil = ?");
+           //Especifico los campos 
+           sq.setString(1, input_cuit.getText().trim());
+           ResultSet rs = sq.executeQuery();
+           
+           if (rs.next()){
+                JOptionPane.showMessageDialog(null, "El cuit ingresado es cliente");
+           }else {
+               JOptionPane.showMessageDialog(null, "El cuit ingresado no es cliente");
+           }
+         }catch(SQLException e){
+       
+       }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_buscarcliente;
     private javax.swing.JButton b_calcular;

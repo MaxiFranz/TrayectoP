@@ -1,14 +1,25 @@
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import java.sql.DriverManager;
+import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 public class altacliente extends javax.swing.JInternalFrame {
 
     String sesion_idv1;
     String sesion_nivelv1;
-    
+    String loc_selected;
+    String idl;
+    String itempl;
+    String loc;
+    String codigolocalidad;
+   
     public altacliente(sesionainternal sesionainternal) {
         initComponents();
         Date myDate = new Date();
@@ -18,9 +29,11 @@ public class altacliente extends javax.swing.JInternalFrame {
         sesion_idv1 = sesionainternal.getCodigoLnI();
         sesion_nivelv1 = sesionainternal.getNivelLnI();
         this.input_operador.setText(sesion_idv1);
+        cargaProvincias();
     }
 
-    int combo_pronvinciaS;
+    String combo_pronvinciaS;
+    int combo_pronvinciaSI;
     int combo_generoS;
     int combo_estadoS;
     
@@ -76,7 +89,6 @@ public class altacliente extends javax.swing.JInternalFrame {
         input_apellido = new javax.swing.JTextField();
         input_nac = new javax.swing.JTextField();
         input_domicilio = new javax.swing.JTextField();
-        input_localidad = new javax.swing.JTextField();
         combo_provincias = new javax.swing.JComboBox<>();
         input_correo = new javax.swing.JTextField();
         combo_estcivil = new javax.swing.JComboBox<>();
@@ -87,12 +99,13 @@ public class altacliente extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         input_hijos = new javax.swing.JTextField();
         lb_total = new javax.swing.JLabel();
+        combo_localidades = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
         b_limpiar = new javax.swing.JButton();
         boton_crear = new javax.swing.JButton();
 
@@ -129,7 +142,7 @@ public class altacliente extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(input_operador, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(input_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,16 +215,6 @@ public class altacliente extends javax.swing.JInternalFrame {
             }
         });
 
-        input_localidad.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                input_localidadKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                input_localidadKeyTyped(evt);
-            }
-        });
-
-        combo_provincias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "CABA", "Buenos Aires", "Cordoba", "Entre Rios", "La Pampa" }));
         combo_provincias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 combo_provinciasActionPerformed(evt);
@@ -245,8 +248,6 @@ public class altacliente extends javax.swing.JInternalFrame {
 
         jLabel9.setText("Localidad");
 
-        jLabel10.setText("Correo electrónico");
-
         jLabel11.setText("Provincias");
 
         jLabel12.setText("Estado Civil");
@@ -262,54 +263,73 @@ public class altacliente extends javax.swing.JInternalFrame {
             }
         });
 
+        combo_localidades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_localidadesActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Correo electrónico");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(49, 49, 49)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(input_nombre)
-                            .addComponent(input_nac)
-                            .addComponent(input_cuit)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(input_domicilio)
-                            .addComponent(combo_provincias, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(input_correo))))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel9)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(49, 49, 49)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(input_nombre)
+                                    .addComponent(input_nac)
+                                    .addComponent(input_cuit)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel5))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(36, 36, 36)
+                                        .addComponent(input_domicilio))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                        .addComponent(combo_provincias, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel12))))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(combo_genero, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(input_apellido, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(input_localidad, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(combo_estcivil, 0, 102, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(input_hijos, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lb_total, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(27, 27, 27)
+                                .addComponent(combo_localidades, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lb_total, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel13)
+                                        .addGap(52, 52, 52)
+                                        .addComponent(input_hijos, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel12)
+                                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(input_apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(combo_genero, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(combo_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(10, 10, 10))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(input_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -330,31 +350,34 @@ public class altacliente extends javax.swing.JInternalFrame {
                         .addComponent(input_apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(input_nac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(input_domicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(input_localidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGap(14, 14, 14)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(combo_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12)
-                    .addComponent(combo_provincias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(input_nac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(combo_estcivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel12)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(input_hijos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(input_domicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8))
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(input_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lb_total, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(input_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(input_hijos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(lb_total, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(combo_provincias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11)
+                            .addComponent(combo_localidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
+                        .addGap(0, 3, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -378,31 +401,31 @@ public class altacliente extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(boton_crear, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(b_limpiar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(b_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boton_crear)
                     .addComponent(b_limpiar)
                     .addComponent(b_cerrar))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -427,7 +450,7 @@ public class altacliente extends javax.swing.JInternalFrame {
     private void boton_crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_crearActionPerformed
        this.validamail();
         if (paso == 1){
-        JOptionPane.showMessageDialog(null, "Todo en orden");
+        //JOptionPane.showMessageDialog(null, "Todo en orden");
         this.grabalinea();
         
         } else {
@@ -516,30 +539,18 @@ public class altacliente extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_input_domicilioKeyTyped
 
-    private void input_localidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_localidadKeyTyped
-        int key = evt.getKeyChar();
-        boolean min = key >=97 && key <=122;
-        boolean espacio = key ==32;
-        boolean may = key >=65 && key <=90;
-     
-        if (!(min || espacio|| may)){
-        evt.consume();    
-       
-        }
-
-        if (input_localidad.getText().length()>=50){
-        evt.consume();
-        
-        }
-    }//GEN-LAST:event_input_localidadKeyTyped
-
     private void combo_provinciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_provinciasActionPerformed
-      combo_pronvinciaS = this.combo_provincias.getSelectedIndex();
-    if (combo_pronvinciaS == 0){
+      //combo_pronvinciaS = (String) this.combo_provincias.getSelectedItem();
+      //tommamos dos valores para hacer la validacion
+      combo_pronvinciaSI = this.combo_provincias.getSelectedIndex();
+     
+      System.out.println(combo_pronvinciaSI);
+      System.out.println(combo_pronvinciaS);
+        if (combo_pronvinciaSI == 0){
        
         v8 = 0;
     }else {
-      
+       cargalocalidades();
       v8 = 1;
       combo_provincias.setEnabled(false);
       suma();
@@ -608,11 +619,6 @@ public class altacliente extends javax.swing.JInternalFrame {
      suma();  
     }//GEN-LAST:event_input_domicilioKeyReleased
 
-    private void input_localidadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_localidadKeyReleased
-      v7 = 1;
-    suma();   
-    }//GEN-LAST:event_input_localidadKeyReleased
-
     private void input_hijosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_hijosKeyReleased
      v10 = 1;
     suma();
@@ -621,6 +627,28 @@ public class altacliente extends javax.swing.JInternalFrame {
     private void input_correoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_correoKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_input_correoKeyReleased
+
+    private void combo_localidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_localidadesActionPerformed
+       loc_selected = (String) this.combo_localidades.getSelectedItem();
+        // Caracter definido previamente
+        char caracterDefinido = '-';
+
+        // Encontrar la posición del caracter definido en la cadena
+        int posicionCaracter = loc_selected.indexOf(caracterDefinido);
+
+        // Verificar si el caracter definido está presente en la cadena
+        if (posicionCaracter != -1) {
+            // Seleccionar la parte de la cadena hasta el caracter definido
+            codigolocalidad = loc_selected.substring(0, posicionCaracter);
+            
+            //JOptionPane.showMessageDialog(null, "Codigo localidad: "+codigolocalidad);
+        } else {
+            // Imprimir un mensaje si el caracter no está presente en la cadena
+            JOptionPane.showMessageDialog(null, "Hubo un error para seleccionar la locadlidad ");
+        }
+        
+        
+    }//GEN-LAST:event_combo_localidadesActionPerformed
 
     private void validamail(){
         mail = this.input_correo.getText();
@@ -660,7 +688,7 @@ public class altacliente extends javax.swing.JInternalFrame {
         
         total = v1+v2+v3+v4+v5+v6+v7+v8+v9+v10;
         this.lb_total.setText(""+total);
-        if (total == 10){
+        if (total == 9){
             this.boton_crear.setEnabled(true);
         }
        
@@ -674,7 +702,7 @@ public class altacliente extends javax.swing.JInternalFrame {
     this.input_domicilio.setText("");
     this.input_hijos.setText("");
     this.input_correo.setText("");
-    this.input_localidad.setText("");
+    this.combo_localidades.setSelectedIndex(0);
     this.lb_total.setText("0");
     this.total = 0;
     this.combo_genero.setSelectedIndex(0);
@@ -697,29 +725,119 @@ public class altacliente extends javax.swing.JInternalFrame {
         va6 = this.input_apellido.getText();// v_apellidc;
         va7 = this.input_nac.getText();// v_nacimiento;
         va8 = this.input_domicilio.getText();// v_domicilio;
-        va9 = this.input_localidad.getText();// v_localidad;
-        va10 = (String)this.combo_provincias.getSelectedItem();// v_provincias;
+        va9 = codigolocalidad;
+        va10 = String.valueOf(combo_pronvinciaSI);
         va11 = (String) this.combo_estcivil.getSelectedItem();// v_estadocivil;
         va12 = this.input_correo.getText();// v_email;
         va13 = this.input_hijos.getText();// v_canthijos;
         
         //comprobamos si esta el archivo, sino, lo crea
-        archivo_altacliente.archivo_crear(this);
+        //archivo_altacliente.archivo_crear(this);
 
         //aca generamos una variable con todos los valores
         String linea = (""+va1+","+va2+","+va3+","+va4+","+va5+","+va6+","+va7+","+va8+
                 ","+va9+","+va10+","+va11+","+va12+","+va13);
         
         //grabamos la linea
-        archivo_altacliente.archivo_escribir(""+linea); 
+        //archivo_altacliente.archivo_escribir(""+linea); 
+        
+        //grabamos la linea en la base
+        try{
+           // conectar a la base de datos
+           Connection conexion = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/banco", "root", "");
+           if (conexion!=null){
+              JOptionPane.showMessageDialog(null, "Conectado a DB. Los datos se grabaran a continuacion.");   
+            }
+          
+    // Enviando la sentencia sql
+           PreparedStatement sq = (PreparedStatement) conexion.prepareStatement("insert into clientes values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+           //Especifico los campos
+           sq.setString(1, "0");
+           sq.setString(2, va1);
+           sq.setString(3, va2);
+           sq.setString(4, va3);
+           sq.setString(5, va4);
+           sq.setString(6, va5);
+           sq.setString(7, va6);
+           sq.setString(8, va7);
+           sq.setString(9, va8);
+           sq.setString(10, va9);
+           sq.setString(11, va10);
+           sq.setString(12, va11);
+           sq.setString(13, va12);
+           sq.setString(14, va13);
+           //Todo lo pedido que lo ejecute y cierre la base
+           sq.executeUpdate();
+           
+       }catch(SQLException e){
+       
+       }
+        
+        //***************************************************************
         this.setVisible(false);
     }
+    
+    private void cargaProvincias(){
+        //devinimos un array. la longitud la da la cantidad de columnas
+        String [] datos = new String[2];
+       
+        try{
+         // conectar a la base de datos
+           java.sql.Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/banco", "root", "");
+            
+            // Enviando la sentencia sql
+           java.sql.PreparedStatement sq = conexion.prepareStatement("select * from provincias order by id ASC");
+           
+           // Ejecutar la consulta y obtener el conjunto de resultados
+           ResultSet rs = sq.executeQuery();
+
+            // Procesar los resultados
+            while (rs.next()) {
+                
+                String id = rs.getString("id");
+                String prov = rs.getString("provincia");
+                String itemp = id  + "" + prov;
+                combo_provincias.addItem(prov);    
+            }  
+         }catch(SQLException e){
+       
+       }
+    }
+    
+    private void cargalocalidades(){
+        //devinimos un array. la longitud la da la cantidad de columnas
+        String [] datos = new String[2];
+       
+        try{
+         // conectar a la base de datos
+           java.sql.Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/banco", "root", "");
+            
+// Enviando la sentencia sql
+           java.sql.PreparedStatement sq = conexion.prepareStatement("select * from localidades where id_privincia = "+combo_pronvinciaSI);
+           
+           // Ejecutar la consulta y obtener el conjunto de resultados
+           ResultSet rs = sq.executeQuery();
+
+            // Procesar los resultados
+            while (rs.next()) {
+                idl = String.valueOf(rs.getString("id"));
+                loc = rs.getString("localidad");
+                itempl = ""+idl+ "-" +loc;
+                combo_localidades.addItem(itempl);    
+            }  
+         }catch(SQLException e){
+       
+       }
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_cerrar;
     private javax.swing.JButton b_limpiar;
     private javax.swing.JButton boton_crear;
     private javax.swing.JComboBox<String> combo_estcivil;
     private javax.swing.JComboBox<String> combo_genero;
+    private javax.swing.JComboBox<String> combo_localidades;
     private javax.swing.JComboBox<String> combo_provincias;
     private javax.swing.JTextField input_apellido;
     private javax.swing.JTextField input_correo;
@@ -727,7 +845,6 @@ public class altacliente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField input_domicilio;
     private javax.swing.JTextField input_fecha;
     private javax.swing.JTextField input_hijos;
-    private javax.swing.JTextField input_localidad;
     private javax.swing.JTextField input_nac;
     private javax.swing.JTextField input_nombre;
     private javax.swing.JTextField input_operador;

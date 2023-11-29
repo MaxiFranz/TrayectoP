@@ -3,7 +3,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -16,7 +20,7 @@ public class veroperaciones extends javax.swing.JInternalFrame {
     public veroperaciones() {
         initComponents();
         cargarTabla(); 
-        cuentaoperaciones();
+        
         
     }
     
@@ -26,21 +30,58 @@ public class veroperaciones extends javax.swing.JInternalFrame {
    
     
     private void cargarTabla(){
-        
-        try {
-            operaciones.addColumn("Id");
-            operaciones.addColumn("Operador");
-            operaciones.addColumn("Fecha operacion");
-            operaciones.addColumn("Cuil Cliente");
+       
+            operaciones.addColumn("Empleado");
             operaciones.addColumn("Tipo de Operacion");
-            operaciones.addColumn("Detalles");
+            operaciones.addColumn("Nombre Cliente");
+            operaciones.addColumn("Apellido");
+            operaciones.addColumn("Fecha");
+            operaciones.addColumn("Detalle");
             tabla.setModel(operaciones);
-
-            cargarArchivo();
-        } catch(IOException e){
-        System.out.println(e);
-        }
+            cargarsql();
+            
+            //cargarArchivo();
+       
        }
+    
+    private void cargarsql(){
+        //devinimos un array. la longitud la da la cantidad de columnas
+        String [] datos = new String[6];
+       
+        try{
+         // conectar a la base de datos
+           Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/banco", "root", "");
+            
+            // Enviando la sentencia sql
+           PreparedStatement sq = conexion.prepareStatement("SELECT "
+                   + "usuarios.usuario_nombre, tipo_operaciones.nombre_operacion, "
+                   + "clientes.nombre, clientes.apellido, operaciones.fecha, "
+                   + "operaciones.detalles FROM operaciones INNER JOIN usuarios "
+                   + "ON operaciones.id_operador = usuarios.id INNER JOIN "
+                   + "clientes ON clientes.cuil = operaciones.cuil_cliente "
+                   + "INNER JOIN tipo_operaciones ON tipo_operaciones.id = "
+                   + "operaciones.tipo_op order by operaciones.fecha DESC;");
+            // Ejecutar la consulta y obtener el conjunto de resultados
+           ResultSet rs = sq.executeQuery();
+           //ResultSet rs2 = sq2.executeQuery();
+           
+          
+           
+            // Procesar los resultados
+            while (rs.next()) {
+                datos[0]=rs.getString(1);//id
+                datos[1]=rs.getString(2);//operador
+                datos[2]=rs.getString(3);//Fecha operacion
+                datos[3]=rs.getString(4);//Cuil Cliente
+                datos[4]=rs.getString(5);//Tipo de Operacion
+                datos[5]=rs.getString(6);//Detalles
+                //agrega cada fila
+                operaciones.addRow(datos);
+            }  
+         }catch(SQLException e){
+       
+       }
+    }
     
     private void cargarArchivo() throws IOException {
        
@@ -68,28 +109,7 @@ public class veroperaciones extends javax.swing.JInternalFrame {
      
      }
     
-    private void cuentaoperaciones (){
-        String sCadena = "";
-        
-        try{
-           FileReader archivo = new FileReader(".\\src\\dbs\\operaciones.txt");
-           BufferedReader leer = new BufferedReader(archivo);
-       
-           lNumeroLineas = 0;
-            while ((sCadena = leer.readLine())!=null) {
-        lNumeroLineas++;
-        lb_cantOp.setText(""+lNumeroLineas);
-  
-        }
-           
- 
-        
-       } catch (FileNotFoundException fnfe){
-            fnfe.printStackTrace();
-            } catch (IOException ioe){
-                  ioe.printStackTrace();
-            }
-    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -97,8 +117,6 @@ public class veroperaciones extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        lb_cantOp = new javax.swing.JLabel();
 
         setTitle("Ver Operaciones");
 
@@ -128,8 +146,6 @@ public class veroperaciones extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tabla);
 
-        jLabel1.setText("Operaciones totales:");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -139,10 +155,6 @@ public class veroperaciones extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lb_cantOp, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -153,12 +165,8 @@ public class veroperaciones extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lb_cantOp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
-                        .addComponent(jLabel1)))
-                .addContainerGap())
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -182,9 +190,7 @@ public class veroperaciones extends javax.swing.JInternalFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lb_cantOp;
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 }

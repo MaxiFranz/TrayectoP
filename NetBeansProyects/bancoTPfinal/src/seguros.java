@@ -1,9 +1,14 @@
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 import static java.awt.image.ImageObserver.HEIGHT;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -41,6 +46,12 @@ public class seguros extends javax.swing.JInternalFrame {
         String ultimoid = "";
        long lNumeroLineas;
          
+            String va1;
+            String va2;
+            String va3;
+            String va4;
+            String detalle;
+    
    private void cuentaoperaciones (){
         
         try{
@@ -141,13 +152,14 @@ public class seguros extends javax.swing.JInternalFrame {
 
         setTitle("Seguros");
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Operador"));
         jPanel1.setPreferredSize(new java.awt.Dimension(163, 51));
 
         jLabel1.setText("Id Operador");
 
         input_operador.setEnabled(false);
+
+        input_fecha.setEnabled(false);
 
         n_op.setEnabled(false);
 
@@ -156,18 +168,17 @@ public class seguros extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(n_op, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(input_fecha))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(input_operador, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18))
+                .addGap(11, 11, 11)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(input_operador, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(n_op, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(input_fecha)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +194,6 @@ public class seguros extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar cliente"));
 
         jLabel2.setText("Ingrese Cuit");
@@ -221,19 +231,20 @@ public class seguros extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(b_buscarcliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(b_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(input_cuit, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(b_reiniciainput, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(input_cuit, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(b_buscarcliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(b_cerrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(b_reiniciainput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,11 +305,11 @@ public class seguros extends javax.swing.JInternalFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(s3_inputbeneficiario4, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                    .addComponent(s3_inputbeneficiario4, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
                     .addComponent(s3_inputbeneficiario3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(s3_inputbeneficiario2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(s3_inputbeneficario1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(s3_combobeneficiarios3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -595,7 +606,7 @@ public class seguros extends javax.swing.JInternalFrame {
                         .addComponent(S1_chektelevisor)
                         .addGap(18, 18, 18)
                         .addComponent(s1_inputtelevisor, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -691,7 +702,7 @@ public class seguros extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel6)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(s2_comboAño, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(s2_inputmarcas, javax.swing.GroupLayout.Alignment.LEADING)
@@ -723,12 +734,22 @@ public class seguros extends javax.swing.JInternalFrame {
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Coberturas"));
 
         s2_chekTercerocompleto.setText("Tercero Completo");
+        s2_chekTercerocompleto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s2_chekTercerocompletoActionPerformed(evt);
+            }
+        });
 
         s2_chekresponsabilidadcivil.setText("Responsabilidad Civil");
 
         s2_triesgosinfranquicia.setText("Todo Riesgo sin franquicia");
 
         s2_triesgoconfranq.setText("Todo Riesgo con franquicia");
+        s2_triesgoconfranq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s2_triesgoconfranqActionPerformed(evt);
+            }
+        });
 
         s2_checkgranizo.setText("Granizo");
 
@@ -755,16 +776,17 @@ public class seguros extends javax.swing.JInternalFrame {
                 .addComponent(s2_chekresponsabilidadcivil)
                 .addGap(18, 18, 18)
                 .addComponent(s2_triesgosinfranquicia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(s2_checkgranizo)
                 .addGap(18, 18, 18)
                 .addComponent(s2_triesgoconfranq)
-                .addGap(18, 18, 18)
-                .addComponent(s2_checkgranizo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder("Franquicia"));
 
-        s2_combofranquicias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        s2_combofranquicias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "20000", "40000", "60000", "80000", "100000" }));
+        s2_combofranquicias.setEnabled(false);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -839,10 +861,10 @@ public class seguros extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jTabbedPane5, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTabbedPane5))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -897,13 +919,13 @@ public class seguros extends javax.swing.JInternalFrame {
     
     //boton para grabar seguro de vida
     private void b_svidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_svidaActionPerformed
-        operacion = "Seguro de vida";
+        operacion = "3";
         
         String nid = n_op.getText();
-        String va1 = this.input_operador.getText();// v_id_operador;
-        String va2 = this.input_fecha.getText();// v_fecha;
-        String va3 = this.input_cuit.getText();//cuit
-        String va4 = operacion;
+        va1 = this.input_operador.getText();// v_id_operador;
+        va2 = this.input_fecha.getText();// v_fecha;
+        va3 = this.input_cuit.getText();//cuit
+        va4 = operacion;
         
         //cargamos variables con lo seleccionado
         if (s1_chek_muerte.isSelected()){
@@ -938,7 +960,7 @@ public class seguros extends javax.swing.JInternalFrame {
         co9 = s3_inputbeneficiario4.getText();
         co9b = s3_restobeneficiario.getText();
         
-        String detalle = "Cobertura: " +co1+ " " +co2+ " " +co3+ " " +co4+ 
+        detalle = "Cobertura: " +co1+ " " +co2+ " " +co3+ " " +co4+ 
                         "-"+co4b+ " " +co6+ "-" +co6b+ " " +co7+ "-" +co7b+ 
                         " "+co8+ "-" +co8b+ " " +co9+ "-" +co9b;
         
@@ -951,18 +973,19 @@ public class seguros extends javax.swing.JInternalFrame {
         
         //grabamos la linea
         archivo_prestamos.archivo_escribir(""+linea);
+        grabaseguros();
         this.setVisible(false);
     }//GEN-LAST:event_b_svidaActionPerformed
 
     //boton para grabar seguro de hogar
     private void b_shogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_shogarActionPerformed
-        operacion = "Seguro de Hogar";
+        operacion = "4";
         
         String nid = n_op.getText();
-        String va1 = this.input_operador.getText();// v_id_operador;
-        String va2 = this.input_fecha.getText();// v_fecha;
-        String va3 = this.input_cuit.getText();//cuit
-        String va4 = operacion;
+        va1 = this.input_operador.getText();// v_id_operador;
+        va2 = this.input_fecha.getText();// v_fecha;
+        va3 = this.input_cuit.getText();//cuit
+        va4 = operacion;
         
         if (S1_chekIncendio.isSelected()){
         co1 = "Incendio"; 
@@ -1012,7 +1035,7 @@ public class seguros extends javax.swing.JInternalFrame {
         }
        
                
-                String detalle = "Cobertura: " +co1+ " " +co1b+ " " +co2+ " " +co2b+ 
+                detalle = "Cobertura: " +co1+ " " +co1b+ " " +co2+ " " +co2b+ 
                         "-"+co3+ " " +co3b+ "" +co4+ " " +co5+ "-" +co6+ 
                         " "+co7+ " " +co8+ " " +co8b+ "" +co9+
                         " "+co10+ " " +co10b;
@@ -1025,28 +1048,61 @@ public class seguros extends javax.swing.JInternalFrame {
         
         //grabamos la linea
         archivo_prestamos.archivo_escribir(""+linea);
+        grabaseguros();
         this.setVisible(false);
     }//GEN-LAST:event_b_shogarActionPerformed
 
     //boton para grabar seguro de autos
     private void b_svehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_svehiculosActionPerformed
-        operacion = "Seguro de vehiculos";
+        operacion = "5";
         
         String nid = n_op.getText();
-        String va1 = this.input_operador.getText();// v_id_operador;
-        String va2 = this.input_fecha.getText();// v_fecha;
-        String va3 = this.input_cuit.getText();//cuit
-        String va4 = operacion;
+        va1 = this.input_operador.getText();// v_id_operador;
+        va2 = this.input_fecha.getText();// v_fecha;
+        va3 = this.input_cuit.getText();//cuit
+        va4 = operacion;
         //hasta aca las lineas para grabar en general todas las operaciones
+        
+        //vamos con los detalles
+        co1 = s2_inputDominio.getText();
+        co2 = s2_inputmarcas.getText();
+        co3 = s2_inputmodelo.getText();
+        co4 = (String) s2_comboAño.getSelectedItem();
+        
+        co5 = "Cobertura";
+        
+        if (s2_chekTercerocompleto.isSelected()){
+            co6 = "Tercero Completo";
+        }
+        
+        if (s2_chekresponsabilidadcivil.isSelected()){
+            co7 = "Todo Riesgo sin franquicia";
+        }
+        
+        if (s2_checkgranizo.isSelected()){
+            co8 = "Granizo";
+        }
+        
+        if (s2_triesgoconfranq.isSelected()){
+            co9 = "Todo Riesgo con Franquicia";
+        }
+        
+        co10 = (String) s2_combofranquicias.getSelectedItem();
+                 
+        //armamos el detalle
+        
+        detalle = "Detalle: " +co1+ " - " +co2+ " - " +co3+ " - " +co4+ 
+                        " " +co5+ " " +co6+ " "+co7+ " " +co8+ " " +co9+ " "+co10;
         
         //comprobamos si esta el archivo, sino, lo crea
         archivo_seguros.archivo_crear(this);
 
         //aca generamos una variable con todos los valores
-        String linea = (""+nid+","+va1+","+va2+","+va3+","+va4);
+        String linea = (""+nid+","+va1+","+va2+","+va3+","+va4+","+detalle);
         
         //grabamos la linea
         archivo_prestamos.archivo_escribir(""+linea);
+        grabaseguros();
         this.setVisible(false);
     }//GEN-LAST:event_b_svehiculosActionPerformed
 
@@ -1189,6 +1245,23 @@ b_svida.setEnabled(false);
        habilitaboton2();  
     }   // TODO add your handling code here:
     }//GEN-LAST:event_s1_chek_paralisisActionPerformed
+
+    private void s2_chekTercerocompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s2_chekTercerocompletoActionPerformed
+    if (s2_chekTercerocompleto.isSelected()){
+        s2_chekresponsabilidadcivil.setSelected(true);
+    } else {
+        s2_chekresponsabilidadcivil.setSelected(false);
+    }
+    }//GEN-LAST:event_s2_chekTercerocompletoActionPerformed
+
+    private void s2_triesgoconfranqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s2_triesgoconfranqActionPerformed
+    if (s2_triesgoconfranq.isSelected()){
+        s2_combofranquicias.setEnabled(true);
+      }else {
+        s2_combofranquicias.setEnabled(false); 
+        s2_combofranquicias.setSelectedIndex(0);
+    }  
+    }//GEN-LAST:event_s2_triesgoconfranqActionPerformed
     
     private void validacuit(){
     
@@ -1198,45 +1271,33 @@ b_svida.setEnabled(false);
         Scanner sc = new Scanner(System.in);
         //inicializamos el numero de linea
         int numeroDeLinea = 1;
-       
-        
-       try {
-           FileReader archivo = new FileReader(".\\src\\dbs\\clientes.txt");
-           BufferedReader leer = new BufferedReader(archivo);
-           entrada = new Scanner(archivo);
+        buscaensql(); 
+    
+    } 
+    
+    private void buscaensql(){
+   
+        try{
+         // conectar a la base de datos
+           java.sql.Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/banco", "root", "");
+            
+            // Enviando la sentencia sql
+           java.sql.PreparedStatement sq = conexion.prepareStatement("SELECT cuil FROM clientes WHERE cuil = ?");
+           //Especifico los campos 
+           sq.setString(1, input_cuit.getText().trim());
+           ResultSet rs = sq.executeQuery();
            
-           while (entrada.hasNext()) { //mientras no se llegue al final del fichero
-                linea = entrada.nextLine();  //se lee una línea
-                //si esta el usuario en la linea que lee...
-                if (linea.contains(cuit_ingresado)) {   
-                        
-                        
-                        JOptionPane.showMessageDialog(null, 
-                                 "Cliente encontrado", "Atencion!", 
-                                 HEIGHT); 
-                         
-                        contieneU = true; 
-                        } 
-
-                    
-                }
-           
-                numeroDeLinea++; //se incrementa el contador de líneas   
-
-               
-                if(!contieneU){
-                JOptionPane.showMessageDialog(null, 
-                                 "El cuit ingresado no pertenece\n "
-                                         + "a un cliente del banco", "Atencion!", 
-                                 HEIGHT);
-                this.input_cuit.setText("");
-                contieneU = false; 
-                 }
-       }catch(FileNotFoundException e){
-           System.out.println(e);
+           if (rs.next()){
+                JOptionPane.showMessageDialog(null, "El cuit ingresado es cliente");
+           }else {
+               JOptionPane.showMessageDialog(null, "El cuit ingresado no es cliente");
+           }
+         }catch(SQLException e){
        
        }
-    } 
+    }
+    
+    
     
      private void habilitaboton(){
          
@@ -1393,6 +1454,36 @@ b_svida.setEnabled(false);
          }
      }
      
+     
+     
+     private void grabaseguros(){
+         //********************************************************************
+        //grabamos la linea en la base
+        try{
+           // conectar a la base de datos
+           Connection conexion = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/banco", "root", "");
+           if (conexion!=null){
+              JOptionPane.showMessageDialog(null, "Conectado a DB");   
+            }
+          
+        // Enviando la sentencia sql
+           PreparedStatement sq = (PreparedStatement) conexion.prepareStatement("insert into operaciones values(?,?,?,?,?,?)");
+           //Especifico los campos
+           sq.setString(1, "0");
+           sq.setString(2, va1);
+           sq.setString(3, va2);
+           sq.setString(4, va3);
+           sq.setString(5, va4);
+           sq.setString(6, detalle);
+           //Todo lo pedido que lo ejecute y cierre la base
+           sq.executeUpdate();
+           
+       }catch(SQLException e){
+       
+       }
+        
+        //********************************************************************
+     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox S1_chekIheladera;

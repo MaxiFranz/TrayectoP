@@ -3,6 +3,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -23,7 +28,7 @@ public class login extends javax.swing.JFrame {
     //dos claves que se van a pasar al resto
     String codigoL = "";
     String nivelL = "";
-   
+    
     
     public login() {
         initComponents();
@@ -155,7 +160,7 @@ public class login extends javax.swing.JFrame {
         //cargamos las variables con los valores ingresados y ejecutamos metodo
         usuarioin = this.input_usuario.getText();
         clavein = this.input_clave.getText();
-        this.validausuario();
+        this.validausuariosql();
     }//GEN-LAST:event_b_validaActionPerformed
 
     private void b_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cerrarActionPerformed
@@ -231,7 +236,52 @@ public class login extends javax.swing.JFrame {
         });
     }
 
-
+    
+    private void validausuariosql(){
+        
+         try{
+         // conectar a la base de datos
+           Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/banco", "root", "");
+           // Enviando la sentencia sql
+           PreparedStatement sq = conexion.prepareStatement("SELECT * FROM usuarios WHERE usuario_nombre = ?");
+           //Especifico los campos 
+           sq.setString(1, input_usuario.getText().trim());
+           ResultSet rs = sq.executeQuery();
+           
+           
+           if (rs.next()){
+                JOptionPane.showMessageDialog(null, "Bienvenido! "+usuarioin);
+               
+                PreparedStatement sq2 = conexion.prepareStatement("SELECT * FROM usuarios WHERE clave = ?");
+                sq2.setString(1, input_clave.getText().trim());
+                ResultSet rs2 = sq2.executeQuery();
+                if (rs2.next()){
+                JOptionPane.showMessageDialog(null, "La clave ingresada es correcta"); 
+                //cargamos las variables para la sesion
+                codigoL = rs.getString("id");
+                nivelL = rs.getString("acceso");
+              
+                //pasamos dos variables al main
+                         sesion pdi = new sesion(codigoL, nivelL);
+                         main  se = new main(pdi);
+                         se.setVisible(true);
+                         this.setVisible(false);
+                
+                } else {
+                 JOptionPane.showMessageDialog(null, "La clave ingresada no es correcta"); 
+                 input_clave.setText("");
+                }
+                
+           } else {
+               JOptionPane.showMessageDialog(null, "El usuario no existe");
+               input_usuario.setText("");
+           }
+           
+         }catch(SQLException e){
+       
+       }
+    }
+    
     private void validausuario(){
     
         Scanner entrada = null;
@@ -307,4 +357,8 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel lb_clave;
     private javax.swing.JLabel lb_usuario;
     // End of variables declaration//GEN-END:variables
+
+    private String setText(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

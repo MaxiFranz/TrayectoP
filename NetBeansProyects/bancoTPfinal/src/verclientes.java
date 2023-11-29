@@ -3,17 +3,14 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 
-/**
- *
- * @author Max
- */
 public class verclientes extends javax.swing.JInternalFrame {
 
     DefaultTableModel clientes = new DefaultTableModel();
@@ -24,27 +21,17 @@ public class verclientes extends javax.swing.JInternalFrame {
     }
 
     private void cargarTabla(){
+        clientes.addColumn("Provincia");
+        clientes.addColumn("Localidad");
+        clientes.addColumn("Cuil/Cuit");
+        clientes.addColumn("Nombre");
+        clientes.addColumn("Apellido");
+        clientes.addColumn("Domicilio");
+        clientes.addColumn("Email");
+        tabla.setModel(clientes);
+        cargarsql();
         
-        try {
-            clientes.addColumn("Operador");
-            clientes.addColumn("Fecha de Alta");
-            clientes.addColumn("Cuil/Cuit");
-            clientes.addColumn("Genero");
-            clientes.addColumn("Nombre");
-            clientes.addColumn("Apellido");
-            clientes.addColumn("Fecha nacimiento");
-            clientes.addColumn("Domicilio");
-            clientes.addColumn("Localidad");
-            clientes.addColumn("Provincia");
-            clientes.addColumn("Estado civil");
-            clientes.addColumn("Email");
-            clientes.addColumn("Cant. Hijos");
-            tabla.setModel(clientes);
-
-            cargarArchivo();
-        } catch(IOException e){
-        System.out.println(e);
-        }
+        //cargarArchivo();
        }
     
     private void cargarArchivo() throws IOException {
@@ -72,6 +59,46 @@ public class verclientes extends javax.swing.JInternalFrame {
          
      
      }
+    
+    private void cargarsql(){
+        //devinimos un array. la longitud la da la cantidad de columnas
+        String [] datos = new String[7];
+       
+        try{
+         // conectar a la base de datos
+           Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/banco", "root", "");
+            
+            // Enviando la sentencia sql
+           PreparedStatement sq = conexion.prepareStatement(""
+                   + "Select provincias.provincia, localidades.localidad, "
+                   + "clientes.cuil, clientes.nombre, clientes.apellido, "
+                   + "clientes.domicilio, clientes.email from clientes inner "
+                   + "join provincias on provincias.id = clientes.provincia "
+                   + "inner join localidades on localidades.id = clientes.localidad");
+           
+           // Ejecutar la consulta y obtener el conjunto de resultados
+           ResultSet rs = sq.executeQuery();
+
+            // Procesar los resultados
+            while (rs.next()) {
+                datos[0]=rs.getString(1);//id
+                datos[1]=rs.getString(2);//operador
+                datos[2]=rs.getString(3);//fecha de alta
+                datos[3]=rs.getString(4);//cuil/cuit
+                datos[4]=rs.getString(5);//genero
+                datos[5]=rs.getString(6);//nombre
+                datos[6]=rs.getString(7);//apellido
+               
+                
+                //agrega cada fila
+                clientes.addRow(datos);
+            }  
+         }catch(SQLException e){
+       
+       }
+    }
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

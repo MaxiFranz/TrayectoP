@@ -1,3 +1,19 @@
 001,02/10/2023 23:12,11111111111,Hombre,Roberto,Goyeneche,121076,Beruti 1024,Caba,CABA,Soltero,pepe@pepe.com,0
 001,11/10/2023 18:50,11123545678,Hombre,Ricardo,Perez,140579,Los Patos 3080,CABA,CABA,Soltero,ricardo@gmail.com,2
 001,16/10/2023 07:53,30254715337,Hombre,Maximo,Franzoni,121019,Los Patos 3081,CABA,CABA,Soltero,pepe@pepe.com.ar,0
+001,21/11/2023 19:13,27456789417,No binario,Luis,Chopra,121019,Beruti 3021,Buenos Aires,CABA,Soltero,pepe@pepe.com.ar,0
+001,21/11/2023 19:16,25451452345,Hombre,sdasd,asdasd,121076,asdasd,sads,CABA,Soltero,sda@asd.com,0
+001,21/11/2023 19:19,21425315301,Hombre,dasda,asdas,121079,sdasa,adasd,CABA,Soltero,sda@dsdas.com,1
+001,21/11/2023 19:21,25471589623,Hombre,sds,dfsdf,121076,sdsdf,dfsd,CABA,Soltero,dss@pirulo.com,8
+001,21/11/2023 19:24,25478946221,Hombre,sdad,asdasd,121079,sdas,asda,CABA,Soltero,asdas@das.com,2
+001,21/11/2023 19:25,25415145153,Hombre,sdads,asdads,121076,sasd,dasad,CABA,Soltero,dsas@pepe.com,2
+001,21/11/2023 19:26,25104568797,No binario,Niki,Chopra,121019,Las Heras 2578,Buenos Aires,CABA,Soltero,pepe@pepe.com,0
+1,24/11/2023 20:28,27250834948,Mujer,NOBLE MARIA,DEL CARMEN,050856,Bolivar 205,Buenos Aires,CABA,Casado,noblemaria@gmail.com,2
+1,25/11/2023 10:49,27218037033,Mujer,Rosa,Flores,100473,San Martin 305,Esquel,Chubut,Divorciado,rosa@esquel.com.ar,4
+1,25/11/2023 10:52,20141260953,Hombre,Simon,Bolivar,031101,Belgrano 158,Ushuahia,Tierra del Fuego,Soltero,simon_bolivar@yahoo.net,0
+1,25/11/2023 10:54,20348696697,No binario,Angel,Paraiso,050555,Salteo 35,Jujuy,Jujuy,Soltero,chango@salta.gov.ar,2
+1,25/11/2023 10:57,20331493148,Hombre,Raul Lorenzo,Benitez,120178,Humberto 1 3256,CABA,Ciudad Autónoma,Soltero,raul_lore@hotmail.com,0
+1,27/11/2023 20:05,20173308036,No binario,Jaime Alberto,Paco,150872,Las Heras 2548,Tinogasta,3,Soltero,paco_alberto@gmail.com,0
+15,27/11/2023 22:43,30663083356,Mujer,MONICA,PUEYRREDON,020356,Lavalle 568,18,3,Divorciado,monica@gmail.com,2
+1,27/11/2023 23:43,30657863676,Hombre,Isabelino,Gamarra,060389,Carlos Calvo 1535,288,3,Soltero,isabelino_progre@hotmail.com,0
+1,27/11/2023 23:46,20049824433,Mujer,Irma,Caceres,030878,Av Rivadavia 7589,295,3,Casado,irma_caceres@hotmail.com,3
