@@ -33,3 +33,5 @@
 33,15,27/11/2023 23:58,20049824433,4,Cobertura: Muerte null Paralisis Parcial o total null-Dias: 30 Ricardo Gutierrez-null -null -null -
 1,29/11/2023 00:04,20348696697,1,El cliente entrega: 250000 - Moneda a entregar: Dolares - Cotizacion: 780 - Total a entregar: 320.0
 4,29/11/2023 00:21,20302775142,2,Monto a entregar: 1000000 - Cantidad de cuotas: 12 - Tasa de Interes: 80 - Intereses a pagar $: 800000 - Total a devolver $: 1800000 - Valor cuota $: 150000
+36,2,29/11/2023 18:26,20302775142,3,Cobertura: null Muerte Accidental null Dias de internacion-Dias: 90 Hager Ruben Omar-null -null -null -
+37,1,29/11/2023 18:53,20302775142,4,Cobertura:   Robo Total- null Heladera-  Notebook 1 Televisor 2

@@ -808,6 +808,7 @@ public class seguros extends javax.swing.JInternalFrame {
         jButton1.setText("Reset Formulario");
 
         b_svehiculos.setText("Contratar");
+        b_svehiculos.setEnabled(false);
         b_svehiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_svehiculosActionPerformed(evt);
@@ -930,32 +931,53 @@ public class seguros extends javax.swing.JInternalFrame {
         //cargamos variables con lo seleccionado
         if (s1_chek_muerte.isSelected()){
         co1 = "Muerte";  
+        } else {
+        co1 = "";     
         }
-         if (s1_chek_muerteacc.isSelected()){
+        
+        if (s1_chek_muerteacc.isSelected()){
         co2 ="Muerte Accidental";   
-        } 
+        } else {
+        co2 ="";     
+        }
         
         if (s1_chek_paralisis.isSelected()){
         co3 ="Paralisis Parcial o total";  
+        } else {
+        co3 ="";   
         }
         
         if (s1_chek_diasinternacion.isSelected()){
         co4 ="Dias de internacion";   
+        }else {
+        co4 ="";     
         }   
         
         co4b = "Dias: " +(String) s3_diasinternacion.getSelectedItem();
         
+        
         co6 = s3_inputbeneficario1.getText();
         if (s1_combobenef1.getSelectedIndex() != 0){
         co6b = (String) s1_combobenef1.getSelectedItem();
+        } else {
+         co6 = "";
+         co6b = "";
         }
+        
         co7 = s3_inputbeneficiario2.getText();
         if (s3_combobeneficiarios2.getSelectedIndex() != 0){
         co7b = (String) s3_combobeneficiarios2.getSelectedItem();
+        } else {
+         co7 = "";
+         co7b = "";
         }
+        
         co8 = s3_inputbeneficiario3.getText();
         if (s3_combobeneficiarios3.getSelectedIndex() != 0){
         co8b = (String) s3_combobeneficiarios3.getSelectedItem();
+        } else {
+        co8 = "";
+        co8b = "";
         }
         co9 = s3_inputbeneficiario4.getText();
         co9b = s3_restobeneficiario.getText();
@@ -990,48 +1012,69 @@ public class seguros extends javax.swing.JInternalFrame {
         if (S1_chekIncendio.isSelected()){
         co1 = "Incendio"; 
         co1b = (String) s1_comboincendio.getSelectedItem();
+        } else {
+        co1 = "";    
+        co1b = "";
         }
 
         if (s1_chekRobo.isSelected()){
         co2 = "Robo"; 
         co2b = (String) s1_comborobo.getSelectedItem();
+        } else {
+        co2 = ""; 
+        co2b = "";    
         }
         
         if (s1_chekInundacion.isSelected()){
         co3 = "Inundacion"; 
         co3b = (String) s1_comboinundacion.getSelectedItem();
+        } else {
+        co3 = ""; 
+        co3b  = "";   
         }
         
-        if (s1_chekInundacion.isSelected()){
-        co3 = "Inundacion"; 
-        co3b = (String) s1_comboinundacion.getSelectedItem();
-        }
+        co4 = "";
+        co4b = "";
         
         if (S1_chekIheladera.isSelected()){
         co5 = "Heladera"; 
+        } else {
+        co5 = "";     
         }
         
          if (S1_cheklavarropas.isSelected()){
         co6 = "Lavarropas"; 
+        } else {
+        co6 = "";        
         }
          
-          if (S1_chekcocina.isSelected()){
+        if (S1_chekcocina.isSelected()){
         co7 = "Cocina";
-          }
+        } else {
+        co7 = "";    
+        }
 
-            if (S1_cheknotebook.isSelected()){
+        if (S1_cheknotebook.isSelected()){
         co8 = "Notebook"; 
         co8b = s1_inputnotebook.getText();
+        } else {
+        co8 = ""; 
+        co8b = "";    
         }
             
-              if (S1_chekconsola.isSelected()){
+        if (S1_chekconsola.isSelected()){
         co9 = "Consola"; 
+        } else {
+        co9 = "";    
         }
           
               
-               if (S1_chektelevisor.isSelected()){
+        if (S1_chektelevisor.isSelected()){
         co10 = "Televisor"; 
         co10b = s1_inputtelevisor.getText();
+        } else {
+        co10 = ""; 
+        co10b = "";    
         }
        
                
@@ -1073,18 +1116,26 @@ public class seguros extends javax.swing.JInternalFrame {
         
         if (s2_chekTercerocompleto.isSelected()){
             co6 = "Tercero Completo";
+        } else {
+             co6 = "";
         }
         
         if (s2_chekresponsabilidadcivil.isSelected()){
             co7 = "Todo Riesgo sin franquicia";
+        } else {
+            co7 = "";
         }
         
         if (s2_checkgranizo.isSelected()){
             co8 = "Granizo";
+        } else {
+            co8 = "";
         }
         
         if (s2_triesgoconfranq.isSelected()){
             co9 = "Todo Riesgo con Franquicia";
+        } else {
+            co9 = "";
         }
         
         co10 = (String) s2_combofranquicias.getSelectedItem();
@@ -1163,7 +1214,7 @@ public class seguros extends javax.swing.JInternalFrame {
         this.S1_chekcocina.setSelected(false);
      this.S1_cheknotebook.setSelected(false);
      this.S1_chekconsola.setSelected(false);
-        this.S1_chektelevisor.setSelected(false);
+    this.S1_chektelevisor.setSelected(false);
     this.s1_comboincendio.setEnabled(false);
     this.s1_comborobo.setEnabled(false);
     this.s1_comboinundacion.setEnabled(false);
@@ -1272,6 +1323,10 @@ b_svida.setEnabled(false);
         //inicializamos el numero de linea
         int numeroDeLinea = 1;
         buscaensql(); 
+        b_svida.setEnabled(true);
+        b_shogar.setEnabled(true);
+        b_svehiculos.setEnabled(true);
+        
     
     } 
     
