@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-11-2023 a las 04:22:28
+-- Tiempo de generación: 01-12-2023 a las 01:02:06
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -51,7 +51,8 @@ CREATE TABLE `clientes` (
 INSERT INTO `clientes` (`id`, `id_operador`, `fecha_alta`, `cuil`, `genero`, `nombre`, `apellido`, `fecha_nacimiento`, `domicilio`, `localidad`, `provincia`, `estado_civil`, `email`, `cant_hijos`) VALUES
 (1, '1', '28/11/2023 23:40', '20348696697', 'Hombre', 'Ezequiel Mauro', 'Barquin', '121089', 'Blas Parera 58', '449', '6', 'Soltero', 'eze_mauro@gmail.com', '0'),
 (4, '1', '28/11/2023 23:53', '27127010698', 'Mujer', 'Alicia Raquel', 'Torres', '100356', 'Av Triunvirato 3546', '282', '3', 'Casado', 'alicia_ra@gmail.com', '2'),
-(5, '4', '29/11/2023 00:19', '20302775142', 'No binario', 'Alberto', 'Gonzalez', '210879', 'Castro Barros 3568 PB A', '288', '3', 'Divorciado', 'alberto_elmasgroso@hotmail.com', '2');
+(5, '4', '29/11/2023 00:19', '20302775142', 'No binario', 'Alberto', 'Gonzalez', '210879', 'Castro Barros 3568 PB A', '288', '3', 'Divorciado', 'alberto_elmasgroso@hotmail.com', '2'),
+(6, '5', '30/11/2023 20:19', '20254789642', 'No binario', 'Santiago', 'Bausali', '051256', 'Blas Parera 678', '1520', '15', 'Casado', 'santiago_blas@hotmail.com', '1');
 
 -- --------------------------------------------------------
 
@@ -2495,7 +2496,10 @@ CREATE TABLE `operaciones` (
 
 INSERT INTO `operaciones` (`id`, `id_operador`, `fecha`, `cuil_cliente`, `tipo_op`, `detalles`) VALUES
 (1, '1', '29/11/2023 00:04', '20348696697', '1', 'El cliente entrega: 250000 - Moneda a entregar: Dolares - Cotizacion: 780 - Total a entregar: 320.0'),
-(2, '4', '29/11/2023 00:21', '20302775142', '2', 'Monto a entregar: 1000000 - Cantidad de cuotas: 12 - Tasa de Interes: 80 - Intereses a pagar $: 800000 - Total a devolver $: 1800000 - Valor cuota $: 150000');
+(2, '4', '29/11/2023 00:21', '20302775142', '2', 'Monto a entregar: 1000000 - Cantidad de cuotas: 12 - Tasa de Interes: 80 - Intereses a pagar $: 800000 - Total a devolver $: 1800000 - Valor cuota $: 150000'),
+(3, '2', '29/11/2023 18:26', '20302775142', '3', 'Cobertura: Muerte Accidental - Dias de internacion-Dias: 90 Hager Ruben Omar'),
+(5, '5', '30/11/2023 20:22', '20254789642', '5', 'Detalle: fc 546 dd - Ford - Aspen - 2017 Cobertura    Todo Riesgo con Franquicia 80000'),
+(6, '2', '30/11/2023 20:36', '27127010698', '4', 'Cobertura: Incendio Total Robo Total-  Heladera-Lavarropas Cocina Notebook 1 Televisor 2');
 
 -- --------------------------------------------------------
 
@@ -2584,7 +2588,8 @@ INSERT INTO `usuarios` (`id`, `usuario_nombre`, `clave`, `dni`, `acceso`) VALUES
 (1, 'admin', '12345', '20254175337', '1'),
 (2, 'ramon', '9113', '20262287012', '2'),
 (3, 'juana', '7033', '27218037033', '3'),
-(4, 'jaime', '8036', '20173308036', '1');
+(4, 'jaime', '8036', '20173308036', '1'),
+(5, 'niki', '1125', '30634911125', '2');
 
 --
 -- Índices para tablas volcadas
@@ -2640,7 +2645,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados_categorias`
@@ -2658,7 +2663,7 @@ ALTER TABLE `localidades`
 -- AUTO_INCREMENT de la tabla `operaciones`
 --
 ALTER TABLE `operaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `provincias`
@@ -2676,7 +2681,7 @@ ALTER TABLE `tipo_operaciones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
