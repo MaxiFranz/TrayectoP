@@ -85,7 +85,7 @@ public class veroperacion extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Borrar");
+        jButton1.setText("Borrar Operacion");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -102,7 +102,9 @@ public class veroperacion extends javax.swing.JInternalFrame {
         jLabel2.setText("Detalle de Operacion");
 
         jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
+        jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -167,6 +169,8 @@ public class veroperacion extends javax.swing.JInternalFrame {
                JOptionPane.showMessageDialog(null, "La operacion existe!");
                detalle = rs.getString(6);
             jTextArea1.setText(detalle);
+            
+         
           }
            
            

@@ -35,3 +35,5 @@
 4,29/11/2023 00:21,20302775142,2,Monto a entregar: 1000000 - Cantidad de cuotas: 12 - Tasa de Interes: 80 - Intereses a pagar $: 800000 - Total a devolver $: 1800000 - Valor cuota $: 150000
 36,2,29/11/2023 18:26,20302775142,3,Cobertura: null Muerte Accidental null Dias de internacion-Dias: 90 Hager Ruben Omar-null -null -null -
 37,1,29/11/2023 18:53,20302775142,4,Cobertura:   Robo Total- null Heladera-  Notebook 1 Televisor 2
+38,5,30/11/2023 20:22,20254789642,5,Detalle: fc 546 dd - Ford - Aspen - 2017 Cobertura    Todo Riesgo con Franquicia 80000
+39,2,30/11/2023 20:36,27127010698,4,Cobertura: Incendio Total Robo Total-  Heladera-Lavarropas Cocina Notebook 1 Televisor 2

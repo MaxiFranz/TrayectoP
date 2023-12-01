@@ -31,10 +31,10 @@ public class veroperxcliente extends javax.swing.JInternalFrame {
     
     private void cargarTabla(){
         
-       
-            operaciones.addColumn("Tipo de Operacion");
-            operaciones.addColumn("Cuil Cliente");
-            operaciones.addColumn("Fecha operacion");
+            operaciones.addColumn("Cuil de cliente");
+            operaciones.addColumn("Fecha");
+            operaciones.addColumn("Id Operacion");
+            operaciones.addColumn("Operacion");
             operaciones.addColumn("Detalles");
             tabla.setModel(operaciones);
        
@@ -42,7 +42,7 @@ public class veroperxcliente extends javax.swing.JInternalFrame {
     
     private void cargarsql(){
         //devinimos un array. la longitud la da la cantidad de columnas
-        String [] datos = new String[4];
+        String [] datos = new String[5];
        
         try{
          // conectar a la base de datos
@@ -50,8 +50,8 @@ public class veroperxcliente extends javax.swing.JInternalFrame {
             
             // Enviando la sentencia sql
            PreparedStatement sq = conexion.prepareStatement("SELECT "
-                   + "tipo_operaciones.nombre_operacion, clientes.cuil, "
-                   + "operaciones.fecha, operaciones.detalles "
+                   + "clientes.cuil, operaciones.fecha, operaciones.id, tipo_operaciones.nombre_operacion,    "
+                   + "operaciones.detalles "
                    + "FROM operaciones INNER JOIN clientes ON clientes.cuil = "
                    + "operaciones.cuil_cliente INNER JOIN tipo_operaciones "
                    + "ON tipo_operaciones.id = operaciones.tipo_op where "
@@ -66,6 +66,7 @@ public class veroperxcliente extends javax.swing.JInternalFrame {
                 datos[1]=rs.getString(2);//operador
                 datos[2]=rs.getString(3);//Fecha operacion
                 datos[3]=rs.getString(4);//Cuil Cliente
+                datos[4]=rs.getString(5);//Cuil Cliente
                 //agrega cada fila
                 operaciones.addRow(datos);
             }  

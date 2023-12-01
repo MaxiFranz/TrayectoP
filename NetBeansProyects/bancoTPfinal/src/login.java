@@ -250,7 +250,7 @@ public class login extends javax.swing.JFrame {
            
            
            if (rs.next()){
-                JOptionPane.showMessageDialog(null, "Bienvenido! "+usuarioin);
+                JOptionPane.showMessageDialog(null, "Bienvenido "+usuarioin+ "!");
                
                 PreparedStatement sq2 = conexion.prepareStatement("SELECT * FROM usuarios WHERE clave = ?");
                 sq2.setString(1, input_clave.getText().trim());
