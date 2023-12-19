@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-19T12:30:28.693Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="IzhNNUzTa-DdmMXPc6MI" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-19T12:42:48.618Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="5ISD1SN4fn7mbZQpTkSZ" version="22.1.11" type="github">
   <diagram name="Página-1" id="55UdeJ7NewFuEaP_pslm">
     <mxGraphModel dx="880" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -46,7 +46,7 @@
         <mxCell id="nHWZqv1kgxw6iTe1pO30-28" value="Cual es la accion &lt;br&gt;asignada?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="318.25" y="320" width="157.5" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="nHWZqv1kgxw6iTe1pO30-30" value="101 - Formulario &lt;br&gt;Alta usuario" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" vertex="1" parent="1">
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-30" value="101 - Formulario &lt;br&gt;Ingrese usuario" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" vertex="1" parent="1">
           <mxGeometry x="110" y="440" width="166" height="70" as="geometry" />
         </mxCell>
         <mxCell id="nHWZqv1kgxw6iTe1pO30-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-31" target="nHWZqv1kgxw6iTe1pO30-41">
@@ -87,6 +87,67 @@
         </mxCell>
         <mxCell id="nHWZqv1kgxw6iTe1pO30-51" value="Si" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="520" y="630" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=55.44;exitDy=70;exitPerimeter=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-53" target="nHWZqv1kgxw6iTe1pO30-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-53" value="Dialog interno - Claves&lt;br&gt;grabadas con exito" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=0.44;size=20;position=0.38;" vertex="1" parent="1">
+          <mxGeometry x="616" y="820" width="126" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-38" target="nHWZqv1kgxw6iTe1pO30-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-56" value="91 - Redireccion a .com" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="930" width="144" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-58" value="Alta usuario" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="206.5" y="330" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-60" value="201 - Consulta si usuario existe" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="110" y="730" width="182" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-61" value="301 - Comprueba si usuario ingresado tiene espacios. Los reeempaza con puntos. Pasa todo a minuscula" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="535" width="180" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.465;entryY=-0.005;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-30" target="nHWZqv1kgxw6iTe1pO30-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-63" value="Dialog interno - Si el usuario tiene espacios o no, lo informa" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=0.44;size=20;position=0.38;" vertex="1" parent="1">
+          <mxGeometry x="110" y="650" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-61" target="nHWZqv1kgxw6iTe1pO30-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.451;entryY=0.038;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0;exitDx=79.2;exitDy=70;exitPerimeter=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-63" target="nHWZqv1kgxw6iTe1pO30-60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-67" target="nHWZqv1kgxw6iTe1pO30-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-67" value="El usuario existe?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="119" y="830" width="157" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-68" value="Dialog interno - El usuario existe" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=0.44;size=20;position=0.38;" vertex="1" parent="1">
+          <mxGeometry x="309" y="850" width="126" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=25;entryPerimeter=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-67" target="nHWZqv1kgxw6iTe1pO30-68">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.024;entryY=0.629;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-68" target="nHWZqv1kgxw6iTe1pO30-30">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="372" y="484" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-71" value="Si" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="258.25" y="840" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-73" value="400 - Update nombre usuario" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="106.5" y="940" width="182" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-75" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="910" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
