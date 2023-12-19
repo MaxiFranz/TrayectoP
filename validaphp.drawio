@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-19T12:42:48.618Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="5ISD1SN4fn7mbZQpTkSZ" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-19T12:43:19.999Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="-zdauRYdlMUDvLSq-rWM" version="22.1.11" type="github">
   <diagram name="Página-1" id="55UdeJ7NewFuEaP_pslm">
     <mxGraphModel dx="880" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -103,6 +103,9 @@
         <mxCell id="nHWZqv1kgxw6iTe1pO30-58" value="Alta usuario" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="206.5" y="330" width="130" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-60" target="nHWZqv1kgxw6iTe1pO30-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="nHWZqv1kgxw6iTe1pO30-60" value="201 - Consulta si usuario existe" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
           <mxGeometry x="110" y="730" width="182" height="80" as="geometry" />
         </mxCell>
@@ -125,10 +128,10 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="nHWZqv1kgxw6iTe1pO30-67" value="El usuario existe?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="119" y="830" width="157" height="80" as="geometry" />
+          <mxGeometry x="122.5" y="840" width="157" height="80" as="geometry" />
         </mxCell>
         <mxCell id="nHWZqv1kgxw6iTe1pO30-68" value="Dialog interno - El usuario existe" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=0.44;size=20;position=0.38;" vertex="1" parent="1">
-          <mxGeometry x="309" y="850" width="126" height="70" as="geometry" />
+          <mxGeometry x="309" y="860" width="126" height="70" as="geometry" />
         </mxCell>
         <mxCell id="nHWZqv1kgxw6iTe1pO30-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=25;entryPerimeter=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-67" target="nHWZqv1kgxw6iTe1pO30-68">
           <mxGeometry relative="1" as="geometry" />
@@ -144,10 +147,10 @@
           <mxGeometry x="258.25" y="840" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="nHWZqv1kgxw6iTe1pO30-73" value="400 - Update nombre usuario" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-          <mxGeometry x="106.5" y="940" width="182" height="80" as="geometry" />
+          <mxGeometry x="110" y="950" width="182" height="80" as="geometry" />
         </mxCell>
         <mxCell id="nHWZqv1kgxw6iTe1pO30-75" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="190" y="910" width="60" height="30" as="geometry" />
+          <mxGeometry x="190" y="920" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
