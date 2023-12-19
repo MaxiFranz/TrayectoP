@@ -1,9 +1,36 @@
-<mxfile host="app.diagrams.net" modified="2023-12-19T12:07:26.648Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" version="22.1.11" etag="ec8MisHC_hjrv5ZZZd7z" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-19T12:18:08.839Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="cLKDSqw2jkBcq8JQjonw" version="22.1.11" type="github">
   <diagram name="Página-1" id="55UdeJ7NewFuEaP_pslm">
-    <mxGraphModel>
+    <mxGraphModel dx="880" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-4" target="nHWZqv1kgxw6iTe1pO30-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-4" value="200 - Consulta token &lt;br&gt;en bd" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="322" y="110" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-5" value="100 - Formulario &lt;br&gt;Ingrese token" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" vertex="1" parent="1">
+          <mxGeometry x="314" y="20" width="166" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-6" value="Es Valido?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="336.5" y="210" width="121" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-5" target="nHWZqv1kgxw6iTe1pO30-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-13" target="nHWZqv1kgxw6iTe1pO30-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-13" value="300 - Dialog - Token no valido &lt;br&gt;(vencido, usado, no existe)" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=0.44;size=20;position=0.38;" vertex="1" parent="1">
+          <mxGeometry x="510" y="140" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=74.8;entryDy=70;entryPerimeter=0;" edge="1" parent="1" source="nHWZqv1kgxw6iTe1pO30-6" target="nHWZqv1kgxw6iTe1pO30-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nHWZqv1kgxw6iTe1pO30-17" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="220" width="60" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
