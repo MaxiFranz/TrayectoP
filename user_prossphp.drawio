@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-20T14:35:36.112Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="DmylAhTHaXA0gwvgD5S3" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-20T14:37:34.433Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="dysu4ZB_JXDtk9Pqhgt8" version="22.1.11" type="github">
   <diagram name="Página-1" id="0gqNR9iIzD01g7om8HYn">
     <mxGraphModel dx="926" dy="457" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -249,8 +249,17 @@
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-101" value="accion 4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="730" y="410" width="97" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-102" target="KxJMnZQ1Z0rmv5bRJUNF-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-102" value="El usuario esta&lt;br&gt;logueado?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="865" y="505" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-107" value="Formulario para disparar correo" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="830" y="620" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-111" value="Mostrar en formulario, correo registrado input deshabilitado y boton. Dispara accion 9 - 23" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KxJMnZQ1Z0rmv5bRJUNF-107">
+          <mxGeometry x="15" y="40" width="170" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
