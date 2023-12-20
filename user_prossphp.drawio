@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-20T14:39:03.514Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="TknDvJl6egXHll6Z7chy" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-20T14:39:29.824Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="TMU2ffDErjdK0LzNG4HC" version="22.1.11" type="github">
   <diagram name="Página-1" id="0gqNR9iIzD01g7om8HYn">
     <mxGraphModel dx="926" dy="457" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -238,7 +238,7 @@
           <mxGeometry x="642" y="1020" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-91" value="Genera y envia email" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
-          <mxGeometry x="930" y="900" width="120" height="60" as="geometry" />
+          <mxGeometry x="900" y="890" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-99" target="KxJMnZQ1Z0rmv5bRJUNF-102">
           <mxGeometry relative="1" as="geometry" />
@@ -254,6 +254,9 @@
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-102" value="El usuario esta&lt;br&gt;logueado?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="870" y="505" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-107" target="KxJMnZQ1Z0rmv5bRJUNF-91">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-107" value="Formulario para disparar correo" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="830" y="620" width="200" height="110" as="geometry" />
