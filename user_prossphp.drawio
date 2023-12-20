@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-20T14:27:08.120Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="yKIIOu_mkuKRz8WiS2Qo" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-20T14:28:45.594Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="l5igoUisiamDXhONRPhg" version="22.1.11" type="github">
   <diagram name="Página-1" id="0gqNR9iIzD01g7om8HYn">
     <mxGraphModel dx="926" dy="457" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -25,17 +25,29 @@
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-9" value="Formulario con boton login" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="14.5" y="180" width="167.5" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-95" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KxJMnZQ1Z0rmv5bRJUNF-9">
+          <mxGeometry x="53.75" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-10" target="KxJMnZQ1Z0rmv5bRJUNF-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-10" value="Formulario con boton Openwide" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="197.5" y="180" width="202.5" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-96" value="3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KxJMnZQ1Z0rmv5bRJUNF-10">
+          <mxGeometry x="72.5" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-11" value="Formulario con boton Reset Pass" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="407.5" y="180" width="202.5" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-97" value="2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KxJMnZQ1Z0rmv5bRJUNF-11">
+          <mxGeometry x="82.5" y="30" width="60" height="30" as="geometry" />
+        </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-12" value="Formulario con boton borrar perfil" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="620" y="180" width="202.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-98" value="4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KxJMnZQ1Z0rmv5bRJUNF-12">
+          <mxGeometry x="94" y="30" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.41;entryY=0.006;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-9" target="KxJMnZQ1Z0rmv5bRJUNF-4">
           <mxGeometry relative="1" as="geometry" />
