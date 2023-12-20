@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2023-12-20T19:55:12.221Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="JyAnKlVmqNFt8cx9JQol" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-20T19:55:54.387Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="VFuvpUhqPGInyepXDt9O" version="22.1.11" type="github">
   <diagram name="Página-1" id="0gqNR9iIzD01g7om8HYn">
     <mxGraphModel dx="1100" dy="543" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-1" value="&lt;h1&gt;User_pross.php&lt;/h1&gt;&lt;p&gt;El archivo procesa multiples consultas que provienen de archivos externos y consultas internas. Las variables definidas y que procesa son:&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;id_user,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;datoIN,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;datoIN2,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;accion&lt;/span&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="20" y="10" width="770" height="100" as="geometry" />
+          <mxGeometry x="12" y="10" width="770" height="100" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-3" target="KxJMnZQ1Z0rmv5bRJUNF-19" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -325,7 +325,7 @@
           <mxGeometry x="635.5" y="210" width="160" height="50" as="geometry" />
         </mxCell>
         <mxCell id="vhHzorupILCDjtNBnkvq-4" value="accion &#39; &#39;&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="630.5" y="255" width="97" height="30" as="geometry" />
+          <mxGeometry x="642" y="255" width="97" height="30" as="geometry" />
         </mxCell>
         <mxCell id="vhHzorupILCDjtNBnkvq-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-107" target="KxJMnZQ1Z0rmv5bRJUNF-129">
           <mxGeometry relative="1" as="geometry" />
@@ -343,7 +343,7 @@
           <mxGeometry x="274" y="1310" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="vhHzorupILCDjtNBnkvq-12" value="GENERAN TOKEN" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="210" y="90" width="600" height="30" as="geometry" />
+          <mxGeometry x="205" y="90" width="355" height="30" as="geometry" />
         </mxCell>
         <mxCell id="vhHzorupILCDjtNBnkvq-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=118;entryDy=25;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-31" target="KxJMnZQ1Z0rmv5bRJUNF-118">
           <mxGeometry relative="1" as="geometry" />
