@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-20T14:46:12.294Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="w9NMIQQZllWkp9j17dSa" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-20T14:48:46.380Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="m81ggCB8IJI4p8JsBqnB" version="22.1.11" type="github">
   <diagram name="Página-1" id="0gqNR9iIzD01g7om8HYn">
     <mxGraphModel dx="926" dy="457" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -238,7 +238,7 @@
           <mxGeometry x="642" y="1020" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-91" value="Genera y envia email" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
-          <mxGeometry x="900" y="890" width="120" height="60" as="geometry" />
+          <mxGeometry x="900" y="990" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-99" target="KxJMnZQ1Z0rmv5bRJUNF-102">
           <mxGeometry relative="1" as="geometry" />
@@ -255,17 +255,14 @@
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-102" value="El usuario esta&lt;br&gt;logueado?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="870" y="505" width="130" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-107" target="KxJMnZQ1Z0rmv5bRJUNF-91">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-107" value="Formulario para disparar correo" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="830" y="620" width="200" height="110" as="geometry" />
+          <mxGeometry x="840" y="620" width="200" height="110" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-111" value="Mostrar en formulario, correo registrado input deshabilitado y boton. Dispara accion 9 - 23" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KxJMnZQ1Z0rmv5bRJUNF-107">
           <mxGeometry x="15" y="40" width="170" height="30" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-113" value="Si" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="920" y="585" width="60" height="30" as="geometry" />
+          <mxGeometry x="930" y="585" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-114" target="KxJMnZQ1Z0rmv5bRJUNF-3">
           <mxGeometry relative="1" as="geometry" />
@@ -299,7 +296,7 @@
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-124" value="Inserta en BD user_token,fecha,id_lastinserted, token, accion = 10, estado = 0" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
           <mxGeometry x="130" y="1060" width="250" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-125" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.332;entryY=-0.002;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.82;exitY=0.814;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-118" target="KxJMnZQ1Z0rmv5bRJUNF-124">
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-125" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.332;entryY=-0.002;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.829;exitY=0.768;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-118" target="KxJMnZQ1Z0rmv5bRJUNF-124">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="213" y="1020" as="sourcePoint" />
           </mxGeometry>
@@ -312,6 +309,21 @@
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-128" value="Accion 10" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="260" y="1010" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-129" value="Inserta en BD user_token,fecha,id_lastinserted, token, accion = 9, estado = 0" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="850" y="760" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-131" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-107" target="KxJMnZQ1Z0rmv5bRJUNF-129">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-134" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.253;exitY=0.772;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-132" target="KxJMnZQ1Z0rmv5bRJUNF-91">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-132" value="Informa todo ok. Pasa id_user y accion = 22" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;size=20;position=0.43;" vertex="1" parent="1">
+          <mxGeometry x="911.25" y="870" width="127.5" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-133" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-129" target="KxJMnZQ1Z0rmv5bRJUNF-132">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
