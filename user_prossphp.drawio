@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-20T16:34:44.716Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="hVA6Lzgu57AxiliGUCsS" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-20T17:30:30.310Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="_y4r1jlz92PeoUVWPFWB" version="22.1.11" type="github">
   <diagram name="Página-1" id="0gqNR9iIzD01g7om8HYn">
     <mxGraphModel dx="880" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -274,7 +274,7 @@
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-107" value="Formulario para disparar correo" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="840" y="620" width="200" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-111" value="Mostrar en formulario, correo registrado input deshabilitado y boton. Dispara accion 9 - 23" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="KxJMnZQ1Z0rmv5bRJUNF-107" vertex="1">
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-111" value="Mostrar en formulario, correo registrado input deshabilitado y boton. Dispara accion 9" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="KxJMnZQ1Z0rmv5bRJUNF-107" vertex="1">
           <mxGeometry x="15" y="40" width="170" height="30" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-113" value="Si" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
@@ -330,9 +330,6 @@
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-129" value="Inserta en BD user_token,fecha,id_lastinserted, token, accion = 9, estado = 0" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
           <mxGeometry x="850" y="760" width="250" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-131" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-107" target="KxJMnZQ1Z0rmv5bRJUNF-129" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-134" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.253;exitY=0.772;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-132" target="KxJMnZQ1Z0rmv5bRJUNF-91" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -347,6 +344,9 @@
         </mxCell>
         <mxCell id="vhHzorupILCDjtNBnkvq-4" value="accion &#39; &#39;&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="670" y="310" width="97" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vhHzorupILCDjtNBnkvq-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-107" target="KxJMnZQ1Z0rmv5bRJUNF-129">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
