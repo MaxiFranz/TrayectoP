@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-20T14:39:29.824Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="TMU2ffDErjdK0LzNG4HC" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-20T14:41:26.276Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="NTbHWixUkyviGqkJGDVt" version="22.1.11" type="github">
   <diagram name="Página-1" id="0gqNR9iIzD01g7om8HYn">
     <mxGraphModel dx="926" dy="457" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -214,7 +214,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-82" value="Inserta en BD o_users, date, email, level, avatar&lt;br&gt;&lt;br&gt;Inserta en BD user_token,fecha,id_lastinserted, token, accion = 8, estado = 0" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-          <mxGeometry x="452" y="830" width="250" height="145" as="geometry" />
+          <mxGeometry x="477" y="830" width="250" height="145" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-76" target="KxJMnZQ1Z0rmv5bRJUNF-82">
           <mxGeometry relative="1" as="geometry" />
@@ -275,6 +275,26 @@
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-115" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=25;entryPerimeter=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-102" target="KxJMnZQ1Z0rmv5bRJUNF-114">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-118" value="Dialog: no puede usar el correo" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;size=20;position=0.43;" vertex="1" parent="1">
+          <mxGeometry x="152" y="945" width="118" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-119" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=118;entryDy=25;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-31" target="KxJMnZQ1Z0rmv5bRJUNF-118">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="720" />
+              <mxPoint x="450" y="970" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-120" value="Text" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="970" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-121" value="Text" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="970" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-122" value="Accion 2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="370" y="940" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
