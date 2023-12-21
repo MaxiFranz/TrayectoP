@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-21T20:06:03.855Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="-V1JGjADghcJ4c2UF1rE" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-21T20:09:52.855Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="dZ5wpnksbmDbTYRvGJBd" version="22.1.11" type="github">
   <diagram name="Página-1" id="55UdeJ7NewFuEaP_pslm">
     <mxGraphModel dx="880" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -386,6 +386,9 @@
         </mxCell>
         <mxCell id="AKfNMI0MB8VE3aAii052-15" value="Acá accion origen que viene por DatoIN, pasa a datoIN2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="237.75" y="530" width="92.5" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="AKfNMI0MB8VE3aAii052-16" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.flowchart.collate;" vertex="1" parent="1">
+          <mxGeometry x="18" y="560" width="20" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
