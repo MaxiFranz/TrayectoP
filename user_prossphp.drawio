@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-22T13:49:48.592Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="y3LeuoRIhZc5s0OJ8RVi" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-22T13:53:41.965Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="RnkYKL_rTNPqg76HspiG" version="22.1.11" type="github">
   <diagram name="Página-1" id="0gqNR9iIzD01g7om8HYn">
     <mxGraphModel dx="880" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -180,7 +180,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-58" value="Cuenta 3 veces el ciclo" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="4" y="550" width="152" height="20" as="geometry" />
+          <mxGeometry x="18.5" y="550" width="152" height="20" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-62" value="Superado los&lt;br&gt;3 intentos abre pagina externa help.php" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="36" y="380" width="120" height="80" as="geometry" />
@@ -195,7 +195,7 @@
           <mxGeometry x="210" y="795" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-68" value="inicia session con id_user y abre &lt;br&gt;pagina externa" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="20" y="800" width="120" height="60" as="geometry" />
+          <mxGeometry x="39.25" y="795" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-70" value="Form ingreso email" style="swimlane;" parent="1" vertex="1">
           <mxGeometry x="519" y="540" width="123" height="60" as="geometry" />
@@ -260,7 +260,7 @@
           <mxGeometry x="525" y="1130" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-91" value="Genera y envia email" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
-          <mxGeometry x="18.5" y="1580" width="159.5" height="60" as="geometry" />
+          <mxGeometry x="30.5" y="1580" width="159.5" height="60" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-99" target="KxJMnZQ1Z0rmv5bRJUNF-102" edge="1">
           <mxGeometry relative="1" as="geometry" />
