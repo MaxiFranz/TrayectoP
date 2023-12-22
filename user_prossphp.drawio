@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-22T14:10:44.289Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="IXVwI9IzfyCHBMIDtMjR" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-22T14:11:31.661Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="beh5qpkpEM0gT7vyToyp" version="22.1.11" type="github">
   <diagram name="Página-1" id="0gqNR9iIzD01g7om8HYn">
     <mxGraphModel dx="880" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -549,6 +549,9 @@
         <mxCell id="5F47CChhEbSNKiJuqiiF-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5F47CChhEbSNKiJuqiiF-17" target="5F47CChhEbSNKiJuqiiF-19">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="5F47CChhEbSNKiJuqiiF-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="5F47CChhEbSNKiJuqiiF-17" target="5F47CChhEbSNKiJuqiiF-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="5F47CChhEbSNKiJuqiiF-17" value="Pudo grabar todo?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="390" y="2160" width="130" height="80" as="geometry" />
         </mxCell>
@@ -556,10 +559,13 @@
           <mxGeometry x="640" y="2180" width="160" height="40" as="geometry" />
         </mxCell>
         <mxCell id="5F47CChhEbSNKiJuqiiF-21" value="Si" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="510" y="2170" width="60" height="30" as="geometry" />
+          <mxGeometry x="500" y="2170" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="5F47CChhEbSNKiJuqiiF-22" value="Externo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="737" y="2150" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5F47CChhEbSNKiJuqiiF-25" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="2170" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
