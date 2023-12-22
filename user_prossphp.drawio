@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-22T13:42:53.699Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="xQPBRm_QBJJlTHm5pXfl" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-22T13:43:55.986Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="Z__bcKW1J4z-iUSlLvRp" version="22.1.11" type="github">
   <diagram name="Página-1" id="0gqNR9iIzD01g7om8HYn">
     <mxGraphModel dx="880" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -42,19 +42,19 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-10" value="Form bot Openwide" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
-          <mxGeometry x="147.5" y="130" width="142.5" height="60" as="geometry" />
+          <mxGeometry x="127.5" y="130" width="122.5" height="60" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-96" value="3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="KxJMnZQ1Z0rmv5bRJUNF-10" vertex="1">
-          <mxGeometry x="42.5" y="30" width="60" height="30" as="geometry" />
+          <mxGeometry x="22.5" y="30" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-11" value="Form boton Reset Pass" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="310" y="130" width="166.25" height="60" as="geometry" />
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-11" value="Form bot Reset Pass" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="263.75" y="130" width="136.25" height="60" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-97" value="2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="KxJMnZQ1Z0rmv5bRJUNF-11" vertex="1">
-          <mxGeometry x="55" y="30" width="60" height="30" as="geometry" />
+          <mxGeometry x="28.25" y="30" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-12" value="Form boton borrar perfil" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="482" y="130" width="160" height="60" as="geometry" />
+          <mxGeometry x="415" y="130" width="160" height="60" as="geometry" />
         </mxCell>
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-98" value="4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="KxJMnZQ1Z0rmv5bRJUNF-12" vertex="1">
           <mxGeometry x="39.5" y="30" width="60" height="30" as="geometry" />
@@ -67,10 +67,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.711;entryY=0.024;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="KxJMnZQ1Z0rmv5bRJUNF-4" edge="1">
+        <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.711;entryY=0.024;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" parent="1" target="KxJMnZQ1Z0rmv5bRJUNF-4" edge="1" source="KxJMnZQ1Z0rmv5bRJUNF-11">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="410" y="210" />
+              <mxPoint x="298" y="210" />
               <mxPoint x="164" y="210" />
             </Array>
             <mxPoint x="410" y="190" as="sourcePoint" />
@@ -79,8 +79,7 @@
         <mxCell id="KxJMnZQ1Z0rmv5bRJUNF-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="KxJMnZQ1Z0rmv5bRJUNF-98" target="KxJMnZQ1Z0rmv5bRJUNF-4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="550" y="190" />
-              <mxPoint x="550" y="220" />
+              <mxPoint x="485" y="220" />
               <mxPoint x="172" y="220" />
             </Array>
             <mxPoint x="225" y="250" as="targetPoint" />
