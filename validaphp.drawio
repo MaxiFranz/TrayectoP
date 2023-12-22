@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-22T18:34:42.453Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="7q5_jUXKz4wks8Y8ln_v" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-22T18:35:07.948Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="8C5h3U97-IMNFs_QgvtY" version="22.1.11" type="github">
   <diagram name="Página-1" id="55UdeJ7NewFuEaP_pslm">
     <mxGraphModel dx="880" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -381,7 +381,7 @@
         <mxCell id="AKfNMI0MB8VE3aAii052-16" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.flowchart.collate;" parent="1" vertex="1">
           <mxGeometry x="18" y="560" width="20" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="AKfNMI0MB8VE3aAii052-19" value="&lt;h1&gt;valida.php (v21/12/23)&lt;/h1&gt;&lt;p&gt;El archivo procesa los token enviados por user_pross.php. Ademas permite modificacion de usuario desde config.php&lt;/p&gt;&lt;p&gt;- Alta usuario (queda externo subir avatar y kinky tags.&lt;/p&gt;&lt;p&gt;- Reset Password&lt;/p&gt;&lt;p&gt;- Borrar cuenta&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+        <mxCell id="AKfNMI0MB8VE3aAii052-19" value="&lt;h1&gt;valida.php (v22/12/23)&lt;/h1&gt;&lt;p&gt;El archivo procesa los token enviados por user_pross.php. Ademas permite modificacion de usuario desde config.php&lt;/p&gt;&lt;p&gt;- Alta usuario (queda externo subir avatar y kinky tags.&lt;/p&gt;&lt;p&gt;- Reset Password&lt;/p&gt;&lt;p&gt;- Borrar cuenta&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="20.5" y="20" width="279.5" height="200" as="geometry" />
         </mxCell>
         <mxCell id="0uoycbMgANorsKWUYCJt-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="0uoycbMgANorsKWUYCJt-1" target="nHWZqv1kgxw6iTe1pO30-116">
